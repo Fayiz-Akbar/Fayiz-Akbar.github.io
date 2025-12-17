@@ -3,29 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fayiz Akbar Daifullah - Kapita Selekta</title>
+    <title>Fayiz Akbar Daifullah - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header class="header">
         <div class="container">
             <h1 class="logo"><a href="#">Fayiz Akbar Daifullah</a></h1>
+            
+            <input type="checkbox" id="nav-toggle-checkbox" class="nav-toggle-checkbox" style="display: none;">
+            <label for="nav-toggle-checkbox" class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </label>
+            
             <nav class="main-nav">
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#education">Education</a></li>
                     <li><a href="#skills">Skills</a></li>
-                    <li><a href="#kapita-selekta">Kapita Selekta</a></li> 
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            <button class="nav-toggle" aria-label="toggle navigation">
-                <span class="hamburger"></span>
-            </button>
         </div>
     </header>
 
@@ -33,24 +37,21 @@
         <div class="container">
             <div class="hero-content">
                 <p class="greeting">Halo, Saya</p>
-                <!-- ID/Class tetap: .name -->
-                <h2 class="name">Fayiz Akbar Daifullah</h2> 
+                <h1 class="name">Fayiz Akbar <br> <span class="highlight-name">Daifullah</span></h1> 
                 <p class="job-title">Fullstack Developer Dan AI Engineer ✨</p>
-                <p class="description">Saya membangun aplikasi web modern yang responsif dengan desain antarmuka yang bersih dan pengalaman pengguna yang mulus.
-Saya memadukan keahlian dalam pengembangan web dengan pemahaman mendalam di bidang Machine Learning hingga Deep Learning untuk menciptakan solusi cerdas, fungsional, dan berorientasi masa depan.</p>
+                <p class="description">Saya membangun aplikasi web modern yang responsif dengan desain antarmuka yang bersih serta memadukan keahlian Machine Learning hingga Deep Learning untuk menciptakan solusi cerdas.</p>
                 <div class="cta-buttons">
-                    <a href="#projects" class="btn btn-primary">Explore My Project</a>
-                    <a href="CV Fayiz.pdf" class="btn btn-secondary">Download My CV <i class="fas fa-download"></i></a> 
+                    <a href="#projects" class="btn btn-primary">EXPLORE MY PROJECT</a>
+                    <a href="CV Fayiz.pdf" class="btn btn-secondary">DOWNLOAD MY CV <i class="fas fa-download"></i></a> 
                 </div>
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/in/fayiz-akbar-daifullah?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                     <a href="https://www.linkedin.com/in/fayiz-akbar-daifullah?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     <a href="https://github.com/fayiz-akbar" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
                     <a href="https://www.instagram.com/faayyiz?igsh=OGFqZG1jazlybHdl" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <div class="hero-image">
-                <!-- Menggunakan placeholder sesuai tema terang -->
-                <img src="image/fayiz.jpg" onerror="this.onerror=null;this.src='https://placehold.co/350x350/f8f9fa/212529?text=Fayiz+Profile';" alt="Fayiz Profile Picture">
+                <img src="image/fayiz.jpg" alt="Fayiz Profile Picture">
             </div>
         </div>
     </section>
@@ -59,247 +60,107 @@ Saya memadukan keahlian dalam pengembangan web dengan pemahaman mendalam di bida
         <div class="container">
             <h2 class="section-title">Tentang Saya</h2>
             <div class="about-content">
-                <p>Saya adalah seorang mahasiswa Teknik Informatika yang memiliki ketertarikan besar di dunia teknologi, khususnya dalam pengembangan antarmuka web. Ketertarikan saya terhadap Frontend Development berawal dari rasa kagum melihat bagaimana desain yang menarik dan interaktif bisa meningkatkan pengalaman pengguna secara drastis. Dari situlah saya mulai mendalami HTML, CSS, dan JavaScript, serta berbagai framework modern seperti React dan Tailwind CSS.</p>
-                <p>Selain mengembangkan sisi visual dan fungsionalitas antarmuka, saya juga terus mengasah kemampuan di bidang Machine Learning dan Deep Learning, karena saya percaya masa depan teknologi akan banyak bergantung pada kecerdasan buatan. Saya terbiasa bekerja secara kolaboratif dalam tim, memiliki kemampuan komunikasi yang baik, dan senang berkontribusi dalam membangun solusi yang berdampak nyata.</p>
-                <p>Di luar dunia teknologi, saya juga menikmati desain grafis dan fotografi, yang semakin menguatkan intuisi saya dalam menciptakan tampilan web yang estetis dan user-friendly.</p>
+                <p>Saya adalah seorang mahasiswa Teknik Informatika yang memiliki ketertarikan besar di dunia teknologi, khususnya dalam pengembangan antarmuka web. Ketertarikan saya terhadap Frontend Development berawal dari rasa kagum melihat bagaimana desain yang menarik dan interaktif bisa meningkatkan pengalaman pengguna secara drastis.</p>
+                <p>Selain mengembangkan sisi visual dan fungsionalitas antarmuka, saya juga terus mengasah kemampuan di bidang Machine Learning dan Deep Learning. Saya terbiasa bekerja secara kolaboratif dalam tim, memiliki kemampuan komunikasi yang baik, dan senang berkontribusi dalam membangun solusi yang berdampak nyata.</p>
             </div>
         </div>
     </section>
     
-    <section id="kapita-selekta" class="kapita-selekta-section">
+    <section id="education" class="education-section">
         <div class="container">
-            <h2 class="section-title">Materi Kapita Selekta</h2>
-            
-            <div id="raspvition" class="analysis-card">
-                <h3>1. Analisis Diri & Kompetensi</h3>
-                
-                <h4 style="margin-bottom: 5px;">A. Kekuatan Pendaftar Dunia: Kreativitas dan Pemecahan Masalah</h4>
-                <p style="margin-bottom: 20px;">Kekuatan utama yang sangat relevan dalam Rekayasa Perangkat Lunak adalah Kreativitas dan Kemampuan Pemecahan Masalah (Problem-Solving). Pengembangan perangkat lunak tidak hanya tentang menulis kode, tetapi juga tentang menemukan solusi yang inovatif dan efisien untuk tantangan kompleks yang sering kali tidak terduga. Kemampuan ini memungkinkan saya merancang arsitektur sistem yang optimal dan menghasilkan fitur yang bernilai fungsional tinggi.</p>
+            <h2 class="section-title">Riwayat Pendidikan</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Universitas Lampung</h3>
+                        <h4>Teknik Informatika (S1)</h4>
+                        <span class="timeline-date">2023 - Sekarang</span>
+                        <p>Fokus pada Pengembangan Perangkat Lunak, Kecerdasan Buatan, dan Jaringan Komputer.</p>
+                    </div>
+                </div>
 
-                <h4 style="margin-bottom: 5px;">B. Area Pengetahuan SWEBOK yang Dipilih</h4>
-                <p>Untuk menguasai RPL secara mendalam dan mendukung kualitas proyek, saya memfokuskan studi pada empat area utama dari SWEBOK (Software Engineering Body of Knowledge):</p>
-                <ul style="list-style: disc; margin-left: 20px; color: var(--text-color);">
-                    <li>Software Requirements: Tahap penentuan kebutuhan pengguna secara cermat untuk menjamin produk akhir relevan dan sesuai ekspektasi.</li>
-                    <li>Software Design: Merancang arsitektur sistem yang kokoh, terukur, dan mudah dikembangkan di masa depan.</li>
-                    <li>Software Construction: Tahapan implementasi atau pengkodean dengan mengedepankan prinsip RPL untuk menghasilkan kode yang bersih (clean code) dan efisien.</li>
-                    <li>Software Testing: Melakukan pengujian sistematis secara menyeluruh untuk menemukan dan memperbaiki bug, demi memastikan kualitas dan keandalan perangkat lunak.</li>
-                    <li>Software Testing: Melakukan pengujian sistematis secara menyeluruh untuk menemukan dan memperbaiki bug, demi memastikan kualitas dan keandalan perangkat lunak.</li></li>
-                </ul>
-            </div>
-            
-            <!-- 2. Analisis SWOT (Pindah dari No. 1) -->
-            <div id="swot" class="analysis-card">
-                <h3>2. Analisis SWOT (Strengths, Weaknesses, Opportunities, Threats)</h3>
-                <div class="swot-grid">
-                    <div class="swot-card S">
-                        <h5 style="color: #28a745;">Kekuatan (STRENGTHS)</h5>
-                        <ul>
-                            <li>Memiliki dasar teori yang cukup kuat dari kuliah.</li>
-                            <li>Mampu coding di beberapa bahasa.</li>
-                            <li>Disiplin dalam mengatur jadwal belajar.</li>
-                            <li>Sudah ada topik skripsi yang sesuai minat.</li>
-                        </ul>
-                    </div>
-                    <div class="swot-card W">
-                        <h5 style="color: #dc3545;">Kelemahan (WEAKNESSES)</h5>
-                        <ul>
-                            <li>Masih kurang pengalaman praktis dalam proyek real.</li>
-                            <li>Networking dengan perusahaan/instansi masih terbatas.</li>
-                        </ul>
-                    </div>
-                    <div class="swot-card O">
-                        <h5 style="color: #00bcd4;">Peluang (OPPORTUNITIES)</h5>
-                        <ul>
-                            <li>KP bisa menjadi jaringan (networking) dengan perusahaan.</li>
-                            <li>Banyak sumber belajar online gratis.</li>
-                            <li>Peluang mengembangkan skripsi jadi produk startup/portofolio kerja.</li>
-                        </ul>
-                    </div>
-                    <div class="swot-card T">
-                        <h5 style="color: #ff9800;">Ancaman (THREATS)</h5>
-                        <ul>
-                            <li>Persaingan dengan teman seangkatan dalam mencari tempat KP.</li>
-                            <li>Perubahan topik kalau ada kesulitan teknis di tengah jalan.</li>
-                        </ul>
+                <div class="timeline-item right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>SMA MUHAMMADIYAH 1 PALEMBANG</h3>
+                        <h4>Ilmu Pengetahuan Alam (IPA)</h4>
+                        <span class="timeline-date">2020 - 2023</span>
+                        <p>Mempelajari dasar-dasar sains dan matematika sebagai landasan pemikiran logis.</p>
                     </div>
                 </div>
             </div>
-            
-            <!-- 3. Porter's Five Forces (Pindah dari No. 2) -->
-            <div id="porter" class="analysis-card">
-                <h3>3. Porter's Five Forces Analysis</h3>
-                <div class="porter-list">
-                    <div class="item">
-                        <strong>Threat of New Entrants (Ancaman Pendatang Baru)</strong>
-                        <p>Mahasiswa lain mencari tempat KP atau mengajukan topik skripsi serupa, memperkecil peluang yang tersisa.</p>
-                        <p class="strategy">Strategi: Bergerak cepat mencari tempat KP/dosen pembimbing, jangan menunggu.</p>
-                    </div>
-                    <div class="item">
-                        <strong>Bargaining Power of Suppliers (Kekuatan Pemasok)</strong>
-                        <p>Dosen pembimbing, perusahaan tempat KP, dan sumber daya digital (jurnal, software) memiliki power besar dalam menentukan sumber daya dan arah.</p>
-                        <p class="strategy">Strategi: Bangun komunikasi baik dengan dosen pembimbing dan manfaatkan sumber gratis (Google Scholar, GitHub, dll).</p>
-                    </div>
-                    <div class="item">
-                        <strong>Bargaining Power of Buyers (Kekuatan Pembeli)</strong>
-                        <p>Dosen penguji skripsi atau perusahaan tempat KP menilai kualitas laporan. Ekspektasi tinggi bisa memicu banyak revisi.</p>
-                        <p class="strategy">Strategi: Fokus pada kualitas laporan & presentasi, serta terbuka menerima masukan.</p>
-                    </div>
-                    <div class="item">
-                        <strong>Threat of Substitutes (Ancaman Produk Pengganti)</strong>
-                        <p>Pilihan untuk mengganti topik KP/Skripsi atau metode penelitian jika jalur awal gagal.</p>
-                        <p class="strategy">Strategi: Siapkan rencana cadangan (backup plan) agar tidak kehilangan waktu.</p>
-                    </div>
-                    <div class="item">
-                        <strong>Industry Rivalry (Persaingan dalam Industri)</strong>
-                        <p>Kompetisi antar mahasiswa seangkatan dalam mencari tempat KP bagus atau topik skripsi populer.</p>
-                        <p class="strategy">Strategi: Ambil topik unik yang sesuai minat, bukan sekadar ikut-ikutan, untuk menurunkan persaingan.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 4. Filosofi Open Source (Pindah dari No. 3) -->
-            <div id="opensource" class="analysis-card">
-                <h3>4. Filosofi Open Source</h3>
-                <p>Filosofi Open Source (Sumber Terbuka) adalah prinsip bahwa kode sumber (source code) suatu perangkat lunak harus tersedia untuk publik. Intinya adalah kolaborasi, transparansi, dan akses bebas untuk penggunaan, modifikasi, dan distribusi.</p>
-                <p>Relevansi dalam RASP:</p>
-                <ul style="list-style: disc; margin-left: 20px; color: var(--text-color);">
-                    <li>Pengalaman Praktis: Proyek open source menjadi sumber belajar online gratis dan menyediakan wadah untuk mendapatkan pengalaman praktis (mengatasi Weakness).</li>
-                    <li>Membangun Jaringan: Kontribusi adalah cara yang efektif untuk membangun networking dengan developer global dan institusi.</li>
-                    <li>Kualitas: Standar open source sering mendorong praktik coding yang lebih bersih dan teruji, meningkatkan kualitas kerja Anda.</li>
-                </ul>
-            </div>
-            
         </div>
     </section>
     
-    <!-- BAGIAN MY SKILLS -->
     <section id="skills" class="skills-section">
         <div class="container">
             <h2 class="section-title">My Skills</h2>
-            <div class="skills-grid">   
-                <div class="skill-card">
-                    <i class="fab fa-html5"></i>
-                    <h3>HTML5</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-css3-alt"></i>
-                    <h3>CSS3</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-js"></i>
-                    <h3>JavaScript</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-react"></i>
-                    <h3>React.js</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="fa-brands fa-python"></i>
-                    <h3>Python</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="fa-brands fa-laravel"></i>
-                    <h3>Laravel</h3>
-                </div>
-                <div class="skill-card">
-                <i class="devicon-mongodb-plain colored"></i>
-                <h3>MongoDB</h3>
-                </div>
-                <div class="skill-card">
-                <i class="devicon-postgresql-plain colored"></i>
-                <h3>PostgreSQL</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-microchip ml-icon" style="color:#fa0707; font-size:50px;"></i>
-                    <h3>Machine Learning</h3>
-                </div>
-                <div class="skill-card">
-                <i class="devicon-mysql-plain colored"></i>
-                <h3>MySQL</h3>
-                </div>
-                <div class="skill-card">
-                <i class="fab fa-node-js" style="color:#539e43; font-size:50px;"></i>
-                <h3>Node JS</h3>
-                </div>
-                <div class="skill-card">
-                <i class="devicon-docker-plain colored"></i>
-                <h3>Docker</h3>
-                </div>
-                
+            <div class="skills-grid"> 
+                <div class="skill-card"><i class="fab fa-html5"></i><h3>HTML5</h3></div>
+                <div class="skill-card"><i class="fab fa-css3-alt"></i><h3>CSS3</h3></div>
+                <div class="skill-card"><i class="fab fa-js"></i><h3>JavaScript</h3></div>
+                <div class="skill-card"><i class="fab fa-react"></i><h3>React.js</h3></div>
+                <div class="skill-card"><i class="fa-brands fa-python"></i><h3>Python</h3></div>
+                <div class="skill-card"><i class="fa-brands fa-laravel"></i><h3>Laravel</h3></div>
+                <div class="skill-card"><i class="devicon-mongodb-plain colored"></i><h3>MongoDB</h3></div>
+                <div class="skill-card"><i class="devicon-postgresql-plain colored"></i><h3>PostgreSQL</h3></div>
+                <div class="skill-card"><i class="fas fa-microchip ml-icon"></i><h3>Machine Learning</h3></div>
+                <div class="skill-card"><i class="devicon-mysql-plain colored"></i><h3>MySQL</h3></div>
+                <div class="skill-card"><i class="fab fa-node-js" style="color:#539e43;"></i><h3>Node JS</h3></div>
+                <div class="skill-card"><i class="devicon-docker-plain colored"></i><h3>Docker</h3></div>
             </div>
         </div>
     </section>
 
-    <!-- BAGIAN EXISTING: MY PROJECTS -->
     <section id="projects" class="projects-section">
         <div class="container">
             <h2 class="section-title">My Projects</h2>
             
             <button class="carousel-btn prev-btn" aria-label="Previous Projects">&#10094;</button>
 
-            <div class="project-carousel-container">    
+            <div class="project-carousel-container" id="swipe-container">    
                 <div class="project-carousel-track">
                     
-                    <!-- Slide 1 -->
                     <div class="project-slide">
                         <div class="project-grid">
                             <div class="project-card">
-                                <!-- Menggunakan placeholder untuk konsistensi -->
-                                <img src="image/Akurasi.jpg" onerror="this.onerror=null;this.src='https://placehold.co/400x220/e9ecef/212529?text=Deep+Learning+Classification';" alt="Project 1">
-                                <h3>Klasifikasi Jenis Sampah dengan Deep Learning</h3>
-                                <p>Membangun model Convolutional Neural Network (CNN) dengan akurasi lebih dari 85% untuk mengklasifikasikan gambar sampah ke dalam kategori organik, anorganik, dan B3.</p>
+                                <img src="image/Akurasi.jpg" alt="Klasifikasi Sampah">
+                                <h3>Klasifikasi Jenis Sampah</h3>
+                                <div class="project-tags">
+                                    <span class="tag tag-red">Deep Learning</span>
+                                    <span class="tag tag-blue">Python</span>
+                                    <span class="tag tag-gray">CNN</span>
+                                </div>
+                                <p>Membangun model CNN dengan akurasi 85% untuk mengklasifikasikan gambar sampah.</p>
                                 <div class="project-links">
-                                    <a href="https://github.com/Fayiz-Akbar/Submission-Proyek-Akhir-Belajar-Deep-Learning_Fayiz-Akbar-Daifullah_2315061011" target="_blank" class="btn btn-project btn-secondary"><i class="fab fa-github"></i> GitHub Repo</a>
+                                    <a href="https://github.com/Fayiz-Akbar/Submission-Proyek-Akhir-Belajar-Deep-Learning_Fayiz-Akbar-Daifullah_2315061011" target="_blank" class="btn btn-project btn-secondary"><i class="fab fa-github"></i> GitHub</a>
                                 </div>
                             </div>
 
                             <div class="project-card">
-                                <img src="image/Dashboard.jpg" onerror="this.onerror=null;this.src='https://placehold.co/400x220/e9ecef/212529?text=Dashboard+Penjualan';" alt="Project 2">
-                                <h3>Website Dashboard Penjualan & Inventaris</h3>
-                                <p>Membangun dashboard admin interaktif berbasis web untuk memantau penjualan harian, stok barang, performa transaksi, dan produk terlaris secara real-time.</p>
+                                <img src="image/Dashboard.jpg" alt="Dashboard Penjualan">
+                                <h3>Dashboard Penjualan</h3>
+                                <div class="project-tags">
+                                    <span class="tag tag-purple">PHP</span>
+                                    <span class="tag tag-blue">MySQL</span>
+                                </div>
+                                <p>Dashboard admin interaktif untuk memantau penjualan harian dan stok barang.</p>
                                 <div class="project-links">
-                                    <a href="https://github.com/Fayiz-Akbar/Inventaris-Elektronik" target="_blank" class="btn btn-project btn-secondary"><i class="fab fa-github"></i> GitHub Repo</a>
+                                    <a href="https://github.com/Fayiz-Akbar/Inventaris-Elektronik" target="_blank" class="btn btn-project btn-secondary"><i class="fab fa-github"></i> GitHub</a>
                                 </div>
                             </div>
 
                             <div class="project-card">
-                                <img src="image/Distribusi Rating Film.png" onerror="this.onerror=null;this.src='https://placehold.co/400x220/e9ecef/212529?text=Movie+Recommendation+System';" alt="Project 3">
-                                <h3>Sistem Rekomendasi Film (Machine Learning)</h3>
-                                <p>Mengembangkan sistem rekomendasi film berbasis collaborative filtering dengan pendekatan user-item rating menggunakan dataset 5000+ pengguna.</p>
-                                <div class="project-links">
-                                    <a href="https://github.com/Fayiz-Akbar/Sistem_Rekomendasi_Film" target="_blank" class="btn btn-project btn-secondary"><i class="fab fa-github"></i> GitHub Repo</a>
+                                <img src="image/Distribusi Rating Film.png" alt="Sistem Rekomendasi Film">
+                                <h3>Sistem Rekomendasi Film</h3>
+                                <div class="project-tags">
+                                    <span class="tag tag-red">Machine Learning</span>
+                                    <span class="tag tag-blue">Python</span>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 2 -->
-                    <div class="project-slide">
-                        <div class="project-grid">
-                            <div class="project-card">
-                                <img src="image/Hasil Latih Model 2.png" onerror="this.onerror=null;this.src='https://placehold.co/400x220/e9ecef/212529?text=Sentiment+Analysis';" alt="Project 4">
-                                <h3>Analisis Sentimen Ulasan Aplikasi Shopee</h3>
-                                <p>Melakukan analisis sentimen terhadap lebih dari 2000 ulasan pengguna Shopee menggunakan metode text classification (Naive Bayes & TF-IDF).</p>
+                                <p>Sistem rekomendasi film berbasis collaborative filtering dengan pendekatan user-item rating.</p>
                                 <div class="project-links">
-                                    <a href="https://github.com/Fayiz-Akbar/Analisis-Sentimen-Aplikasi-Shopee" target="_blank" class="btn btn-project btn-secondary"><i class="fab fa-github"></i> GitHub Repo</a>
-                                </div>
-                            </div>
-
-                            <div class="project-card">
-                                <img src="image/Prediksi Kualitas Udara.png" onerror="this.onerror=null;this.src='https://placehold.co/400x220/e9ecef/212529?text=ARIMA+Prediction';" alt="Project 5 ">
-                                <h3>Prediksi Kadar PM2.5 Harian Jakarta dengan Model ARIMA</h3>
-                                <p>Proyek ini bertujuan memprediksi kadar polutan PM2.5 harian di Jakarta menggunakan model ARIMA (Autoregressive Integrated Moving Average) untuk informasi kualitas udara.</p>
-                                <div class="project-links">
-                                    <a href="https://github.com/Fayiz-Akbar/Analisis-dan_Prediksi-Kadar_PM2.5_Harian_Jakarta_dengan_Model_ARIMA" target="_blank" class="btn btn-project btn-secondary"><i class="fab fa-github"></i> GitHub Repo</a>
-                                </div>
-                            </div>
-                            
-                            <div class="project-card">
-                                <img src="image/smpn18.png" onerror="this.onerror=null;this.src='https://placehold.co/400x220/e9ecef/212529?text=School+Website';" alt="Project 6">
-                                <h3>Website Sekolah SMPN 18 Bandar Lampung</h3>
-                                <p>Mengembangkan website profil sekolah menggunakan WordPress yang menampilkan lebih dari 10 halaman informasi sekolah.</p>
-                                <div class="project-links">
-                                    <a href="#" target="_blank" class="btn btn-project btn-secondary"><i class="fa-solid fa-link"></i> Link Sekolah</a>
+                                    <a href="https://github.com/Fayiz-Akbar/Sistem_Rekomendasi_Film" target="_blank" class="btn btn-project btn-secondary"><i class="fab fa-github"></i> GitHub</a>
                                 </div>
                             </div>
                         </div>
@@ -308,29 +169,88 @@ Saya memadukan keahlian dalam pengembangan web dengan pemahaman mendalam di bida
                     <div class="project-slide">
                         <div class="project-grid">
                             <div class="project-card">
-                                <img src="image/literastore.png" onerror="this.onerror=null;this.src='https://placehold.co/400x220/e9ecef/212529?text=Sentiment+Analysis';" alt="Project 4">
-                                <h3>Website Jual Beli Buku LiteraStore</h3>
-                                <p>Website Jual Beli Buku Melalui Online dimana Menggunakan HTML, CSS dan Javascript.</p>
+                                <img src="image/Hasil Latih Model 2.png" alt="Analisis Sentimen">
+                                <h3>Analisis Sentimen Shopee</h3>
+                                <div class="project-tags">
+                                    <span class="tag tag-blue">Python</span>
+                                    <span class="tag tag-gray">NLP</span>
+                                    <span class="tag tag-purple">Naive Bayes</span>
+                                </div>
+                                <p>Analisis sentimen terhadap 2000+ ulasan pengguna Shopee menggunakan text classification.</p>
                                 <div class="project-links">
-                                    <a href="https://github.com/Fayiz-Akbar/Website-jual-buku-" target="_blank" class="btn btn-project btn-secondary"><i class="fab fa-github"></i> GitHub Repo</a>
+                                    <a href="https://github.com/Fayiz-Akbar/Analisis-Sentimen-Aplikasi-Shopee" target="_blank" class="btn btn-project btn-secondary"><i class="fab fa-github"></i> GitHub</a>
                                 </div>
                             </div>
 
                             <div class="project-card">
-                                <img src="" onerror="this.onerror=null;this.src='https://placehold.co/400x220/e9ecef/212529?text=ARIMA+Prediction';" alt="Project 5 ">
-                                <h3></h3>
-                                <p></p>
+                                <img src="image/Prediksi Kualitas Udara.png" alt="Prediksi PM2.5">
+                                <h3>Prediksi Udara (ARIMA)</h3>
+                                <div class="project-tags">
+                                    <span class="tag tag-blue">Python</span>
+                                    <span class="tag tag-green">Time Series</span>
+                                </div>
+                                <p>Memprediksi kadar polutan PM2.5 harian di Jakarta menggunakan model ARIMA.</p>
                                 <div class="project-links">
-                                    <a href="https://github.com/Fayiz-Akbar/Analisis-dan_Prediksi-Kadar_PM2.5_Harian_Jakarta_dengan_Model_ARIMA" target="_blank" class="btn btn-project btn-secondary"><i class="fab fa-github"></i> GitHub Repo</a>
+                                    <a href="https://github.com/Fayiz-Akbar/Analisis-dan_Prediksi-Kadar_PM2.5_Harian_Jakarta_dengan_Model_ARIMA" target="_blank" class="btn btn-project btn-secondary"><i class="fab fa-github"></i> GitHub</a>
                                 </div>
                             </div>
                             
                             <div class="project-card">
-                                <img src="" onerror="this.onerror=null;this.src='https://placehold.co/400x220/e9ecef/212529?text=School+Website';" alt="Project 6">
-                                <h3></h3>
-                                <p></p>
+                                <img src="image/smpn18.png" alt="Website Sekolah">
+                                <h3>Website SMPN 18</h3>
+                                <div class="project-tags">
+                                    <span class="tag tag-blue">WordPress</span>
+                                    <span class="tag tag-orange">CMS</span>
+                                </div>
+                                <p>Website profil sekolah yang menampilkan lebih dari 10 halaman informasi.</p>
                                 <div class="project-links">
-                                    <a href="#" target="_blank" class="btn btn-project btn-secondary"><i class="fa-solid fa-link"></i> Link Sekolah</a>
+                                    <a href="#" target="_blank" class="btn btn-project btn-secondary"><i class="fa-solid fa-link"></i> Link</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-slide">
+                        <div class="project-grid">
+                            <div class="project-card">
+                                <img src="image/literastore.png" alt="LiteraStore">
+                                <h3>LiteraStore</h3>
+                                <div class="project-tags">
+                                    <span class="tag tag-orange">HTML</span>
+                                    <span class="tag tag-blue">CSS</span>
+                                    <span class="tag tag-yellow">JS</span>
+                                </div>
+                                <p>Website Jual Beli Buku Online menggunakan Vanilla JavaScript.</p>
+                                <div class="project-links">
+                                    <a href="https://github.com/Fayiz-Akbar/Website-jual-buku-" target="_blank" class="btn btn-project btn-secondary"><i class="fab fa-github"></i> GitHub</a>
+                                </div>
+                            </div>
+
+                            <div class="project-card">
+                                <img src="image/book_api.png" onerror="this.onerror=null;this.src='https://placehold.co/400x220/e9ecef/212529?text=Web+Service+API';" alt="Web Service API">
+                                <h3>Web Service Buku (API)</h3>
+                                <div class="project-tags">
+                                    <span class="tag tag-purple">PHP</span>
+                                    <span class="tag tag-blue">PostgreSQL</span>
+                                    <span class="tag tag-yellow">API</span>
+                                </div>
+                                <p>Membangun API murni untuk mengelola data buku dengan endpoint CRUD lengkap.</p>
+                                <div class="project-links">
+                                    <a href="https://github.com/Fayiz-Akbar/Web-Service-katalog-buku-digital" target="_blank" class="btn btn-project btn-secondary"><i class="fab fa-github"></i> GitHub</a>
+                                </div>
+                            </div>
+
+                            <div class="project-card">
+                                <img src="image/bookhaven.jpg" onerror="this.onerror=null;this.src='https://placehold.co/400x220/e9ecef/212529?text=BookHaven';" alt="BookHaven App">
+                                <h3>Web E-Commerce BookHaven</h3>
+                                <div class="project-tags">
+                                    <span class="tag tag-red">Laravel</span>
+                                    <span class="tag tag-blue">React</span>
+                                    <span class="tag tag-gray">Tailwind</span>
+                                </div>
+                                <p>Web full-stack manajemen buku dengan backend Laravel dan frontend React.</p>
+                                <div class="project-links">
+                                    <a href="https://github.com/Fayiz-Akbar/website-buku-Web_Framework" target="_blank" class="btn btn-project btn-secondary"><i class="fab fa-github"></i> GitHub</a>
                                 </div>
                             </div>
                         </div>
@@ -340,33 +260,19 @@ Saya memadukan keahlian dalam pengembangan web dengan pemahaman mendalam di bida
             </div>
 
             <button class="carousel-btn next-btn" aria-label="Next Projects">&#10095;</button>
-
-            <div class="carousel-dots">
-                <!-- Dots will be generated by JS -->
-            </div>
+            <div class="carousel-dots"></div>
         </div>
-    </section>
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2 class="section-title">Hubungi Saya</h2>
-            <p class="contact-intro">Jangan ragu untuk menghubungi saya jika Anda memiliki proyek yang ingin didiskusikan, pertanyaan seputar teknologi, atau sekadar ingin menyapa!</p>
-            <div class="contact-info">
-                <a href="mailto:fayizakbar26@gmail.com"><i class="fas fa-envelope"></i> fayizakbar26@gmail.com</a>
-                <a href="https://www.instagram.com/faayyiz?igsh=OGFqZG1jazlybHdl"><i class="fa-brands fa-instagram"></i> faayyiz</a>
-            </div>
-        </div>
-    </section>
-
+    </section> 
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 Fayiz Akbar Daifullah. All rights reserved.</p>
             <div class="footer-social-links">
-                <a href="https://www.linkedin.com/in/fayiz-akbar-daifullah?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/fayiz-akbar" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/fayiz-akbar-daifullah?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/fayiz-akbar" target="_blank"><i class="fab fa-github"></i></a>
             </div>
         </div>
     </footer>
-
+    
     <script src="script.js"></script>
 </body>
 </html>

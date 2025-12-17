@@ -96,7 +96,7 @@
         }
 
         .btn-primary {
-            background-color: var(--primary-color);
+            background-color: #183758;
             color: white;
         }
 
@@ -253,7 +253,7 @@
 
         .hero-content .greeting {
             font-size: 1.2rem;
-            color: var(--primary-color);
+            color: #183758;
             font-weight: 600;
             margin-bottom: 5px;
         }
@@ -874,3 +874,198 @@
                 font-size: 1.5rem;
             }
         }
+
+        /* =========================================
+   TAMBAHAN CSS BARU (Education & Updates)
+   ========================================= */
+
+/* 1. HERO UPDATE (Nama Besar & Tombol Baru) */
+.hero-content .name {
+    font-family: var(--font-poppins);
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #183758;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+    
+}
+
+/* Tombol Custom (Solid & Outline) */
+.btn-primary-custom {
+    background-color: #0f172a; /* Dark Blue/Black */
+    color: white;
+    padding: 14px 30px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border: 2px solid #0f172a;
+    display: inline-block;
+}
+.btn-primary-custom:hover {
+    background-color: #334155;
+    border-color: #334155;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.btn-secondary-custom {
+    background-color: transparent;
+    color: #0f172a;
+    padding: 14px 30px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border: 2px solid #cbd5e1;
+    display: inline-block;
+}
+.btn-secondary-custom:hover {
+    border-color: #0f172a;
+    background-color: white;
+    transform: translateY(-3px);
+}
+
+
+/* 2. EDUCATION SECTION (TIMELINE ZIG-ZAG) */
+.education-section {
+    padding: var(--section-padding);
+    background-color: var(--light-bg); /* Background abu terang agar kartu putih kontras */
+}
+
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Garis Tengah */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #cbd5e1; /* Warna garis abu */
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+    border-radius: 2px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+/* Posisi Kiri & Kanan */
+.timeline-item.left { left: 0; }
+.timeline-item.right { left: 50%; }
+
+/* Kartu Putih */
+.timeline-content {
+    padding: 25px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Dot (Lingkaran di Garis) */
+.timeline-dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: 4px solid var(--primary-color);
+    border-radius: 50%;
+    top: 30px; /* Sejajar dengan judul */
+    z-index: 1;
+}
+
+/* Posisi Dot */
+.timeline-item.left .timeline-dot { right: -10px; }
+.timeline-item.right .timeline-dot { left: -10px; }
+
+/* Panah Kecil ke Arah Garis */
+.timeline-item.left .timeline-content::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 28px;
+    width: 0;
+    z-index: 1;
+    right: -10px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+}
+
+.timeline-item.right .timeline-content::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 28px;
+    width: 0;
+    z-index: 1;
+    left: -10px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+}
+
+/* Typography Timeline */
+.timeline-content h3 { font-size: 1.25rem; color: var(--dark-bg); margin-bottom: 5px; }
+.timeline-content h4 { font-size: 1rem; color: var(--primary-color); font-weight: 600; margin-bottom: 10px; }
+.timeline-date { display: inline-block; font-size: 0.85rem; color: var(--secondary-color); font-style: italic; margin-bottom: 10px; }
+
+
+/* 3. TAGS STYLING (Badge Project) */
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0 20px 10px;
+}
+.tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 22px;
+    display: inline-block;
+}
+.tag-red { background-color: #fee2e2; color: #991b1b; }
+.tag-blue { background-color: #e0f2fe; color: #075985; }
+.tag-purple { background-color: #f3e8ff; color: #6b21a8; }
+.tag-green { background-color: #dcfce7; color: #166534; }
+.tag-orange { background-color: #ffedd5; color: #9a3412; }
+.tag-yellow { background-color: #fef9c3; color: #854d0e; }
+.tag-gray { background-color: #f1f5f9; color: #334155; }
+
+
+/* 4. RESPONSIVE TIMELINE (HP) */
+@media screen and (max-width: 768px) {
+    /* Garis pindah ke kiri */
+    .timeline::after { left: 31px; }
+    
+    /* Item jadi full width di kanan garis */
+    .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
+    .timeline-item.left, .timeline-item.right { left: 0; }
+    
+    /* Dot pindah ke kiri */
+    .timeline-item.left .timeline-dot, .timeline-item.right .timeline-dot { left: 21px; }
+    
+    /* Panah selalu menghadap kiri */
+    .timeline-item.left .timeline-content::before {
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+        left: -10px;
+        right: auto;
+    }
+}
