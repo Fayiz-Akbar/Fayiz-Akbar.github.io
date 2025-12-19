@@ -1,4 +1,4 @@
-        /* --- CSS DARI style.css (Tema Baru: Light Background, Dark Text) --- */
+/* --- CSS DARI style.css (Tema Baru: Light Background, Dark Text) --- */
         
         /* Variabel CSS (untuk kemudahan kustomisasi) */
         :root {
@@ -1047,7 +1047,15 @@
 .tag-orange { background-color: #ffedd5; color: #9a3412; }
 .tag-yellow { background-color: #fef9c3; color: #854d0e; }
 .tag-gray { background-color: #f1f5f9; color: #334155; }
+.tag-cyan {
+    background-color: #00bcd4;
+    color: white;
+}
 
+.tag-flutter {
+    background-color: #41d8ec;
+    color: rgb(255, 255, 255);
+}
 
 /* 4. RESPONSIVE TIMELINE (HP) */
 @media screen and (max-width: 768px) {
