@@ -1063,6 +1063,11 @@
     color: rgb(255, 255, 255);
 }
 
+.tag-iot {
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+}
+
 /* 4. RESPONSIVE TIMELINE (HP) */
 @media screen and (max-width: 768px) {
     /* Garis pindah ke kiri */
