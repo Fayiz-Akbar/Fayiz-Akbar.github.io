@@ -9,7 +9,7 @@ const projectsData = [
     title: "RobustaHub", 
     categories: ["Web"], 
     image: "/image/robustahub.png", 
-    tags: ["React", "Node.js", "Agritech", "B2B", "Payment Gateway"], 
+    tags: ["React", "Express.js", "Agritech", "B2B", "Payment Gateway"], 
     desc: "Platform B2B Agritech E-Commerce yang dirancang khusus sebagai penghubung langsung antara petani kopi Robusta di Lampung dengan berbagai coffee shop di seluruh Indonesia untuk memotong rantai pasok yang panjang.", 
     link: "https://github.com/fayiz-akbar" 
   },
@@ -18,7 +18,7 @@ const projectsData = [
     title: "EmpathAI", 
     categories: ["AI & ML", "Web"], 
     image: "/image/empathai.png", 
-    tags: ["Node.js", "Express.js", "NLP", "Chatbot"], 
+    tags: ["Node.js", "Express.js", "NLP", "Chatbot", "React"], 
     desc: "Sistem chatbot interaktif berbasis kecerdasan buatan (AI) yang dirancang untuk memberikan dukungan emosional. Sistem ini membantu pengguna dalam mengekspresikan dan memahami kondisi emosional mereka melalui analisis teks tingkat lanjut.", 
     link: "https://github.com/fayiz-akbar" 
   },
