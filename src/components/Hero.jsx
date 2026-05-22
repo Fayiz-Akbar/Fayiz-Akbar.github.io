@@ -61,7 +61,7 @@ const Hero = () => {
           {/* Teks Typewriter Besar */}
           <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6 font-poppins h-[40px] md:h-[50px]">
             <Typewriter
-              words={['Fullstack Developer', 'AI Engineer']}
+              words={['Fullstack Developer', 'AI Developer']}
               loop={true}
               cursor
               cursorStyle='|'
