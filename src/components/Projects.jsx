@@ -20,7 +20,7 @@ const projectsData = [
     image: "/image/empathai.png", 
     tags: ["Node.js", "Express.js", "NLP", "Chatbot", "React"], 
     desc: "Sistem chatbot interaktif berbasis kecerdasan buatan (AI) yang dirancang untuk memberikan dukungan emosional. Sistem ini membantu pengguna dalam mengekspresikan dan memahami kondisi emosional mereka melalui analisis teks tingkat lanjut.", 
-    link: "https://github.com/fayiz-akbar" 
+    link: "https://empath-ai.netlify.app/" 
   },
   { 
     id: 3, 
