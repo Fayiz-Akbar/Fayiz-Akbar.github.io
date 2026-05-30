@@ -18,7 +18,7 @@ const projectsData = [
     title: "EmpathAI", 
     categories: ["AI & ML", "Web"], 
     image: "/image/empathai.png", 
-    tags: ["Node.js", "Express.js", "NLP", "Chatbot", "React"], 
+    tags: ["Node.js", "Express.js", "NLP", "Chatbot", "React", "MongoDB"], 
     desc: "Sistem chatbot interaktif berbasis kecerdasan buatan (AI) yang dirancang untuk memberikan dukungan emosional. Sistem ini membantu pengguna dalam mengekspresikan dan memahami kondisi emosional mereka melalui analisis teks tingkat lanjut.", 
     link: "https://empath-ai.netlify.app/" 
   },
@@ -67,6 +67,7 @@ const tagColors = {
   "Machine Learning": "bg-orange-50 text-orange-600 border border-orange-200/60",
   "PHP": "bg-purple-50 text-purple-600 border border-purple-200/60",
   "MySQL": "bg-blue-50 text-[#00758F] border border-blue-100",
+  "MongoDB": "bg-green-100 text-green-800 border border-green-300",
   "API": "bg-amber-50 text-amber-700 border border-amber-200/60",
   "Time Series": "bg-lime-50 text-lime-700 border border-lime-200/60",
   "IoT": "bg-zinc-900 text-zinc-100 border border-zinc-800",
