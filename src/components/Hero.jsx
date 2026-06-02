@@ -9,11 +9,11 @@ import {
 import { 
   SiJavascript, SiMongodb, SiSqlite, SiMysql, 
   SiTailwindcss, SiPostgresql, SiFlutter, SiDart,
-  SiExpress, SiVite // Tambahan icon Express dan Vite
+  SiExpress, SiVite, SiFigma // Mengembalikan import SiFigma
 } from "react-icons/si";
 
 const Hero = () => {
-  // Data Tech Stack (Sudah ditambah Express & Vite)
+  // Data Tech Stack 
   const techStack = [
     { name: "HTML5", icon: <FaHtml5 /> },
     { name: "CSS3", icon: <FaCss3Alt /> },
@@ -37,18 +37,59 @@ const Hero = () => {
     { name: "IoT", icon: <FaNetworkWired /> },
   ];
 
+  // Konfigurasi Animasi Melayang untuk Background
+  const floatingAnimation = (duration, delay) => ({
+    y: [0, -20, 0],
+    rotate: [0, 10, -10, 0],
+    transition: {
+      duration: duration,
+      repeat: Infinity,
+      ease: "easeInOut",
+      delay: delay,
+    }
+  });
+
   return (
     <section id="home" className="relative min-h-screen bg-[#f8f9fa] pt-32 flex flex-col justify-between overflow-hidden">
       
-      {/* Kontainer Utama Hero (Diubah ke max-w-6xl agar lebih lebar tapi tetap rapi) */}
-      <div className="max-w-6xl mx-auto px-6 lg:px-8 flex-grow flex flex-col-reverse lg:flex-row items-center justify-between gap-12 pb-20">
+      {/* --- DEKORASI BACKGROUND MELAYANG (FIGMA KEMBALI SOLID WARNA) --- */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
+        {/* Ikon React - Pojok Kiri Atas */}
+        <motion.div animate={floatingAnimation(6, 0)} className="absolute top-[12%] left-[4%] md:left-[6%] text-[#61DAFB] opacity-60 drop-shadow-xl text-6xl md:text-8xl">
+          <FaReact />
+        </motion.div>
+        
+        {/* Ikon Figma - Kembali ke warna solid semula */}
+        <motion.div animate={floatingAnimation(8, 1.5)} className="absolute top-[15%] right-[5%] md:right-[7%] text-[#F24E1E] opacity-50 drop-shadow-xl text-7xl md:text-9xl">
+          <SiFigma />
+        </motion.div>
+        
+        {/* Ikon Tailwind - Di tengah atas */}
+        <motion.div animate={floatingAnimation(5, 0.5)} className="absolute top-[40%] left-[45%] text-[#38B2AC] opacity-60 drop-shadow-xl text-4xl md:text-5xl">
+          <SiTailwindcss />
+        </motion.div>
+
+        {/* Ikon Laravel - Pojok Kiri Bawah */}
+        <motion.div animate={floatingAnimation(7, 1)} className="absolute bottom-[15%] left-[4%] md:left-[6%] text-[#FF2D20] opacity-60 drop-shadow-xl text-5xl md:text-7xl">
+          <FaLaravel />
+        </motion.div>
+        
+        {/* Ikon Python - Pojok Kanan Bawah */}
+        <motion.div animate={floatingAnimation(9, 2)} className="absolute bottom-[18%] right-[4%] md:right-[6%] text-[#3776AB] opacity-50 drop-shadow-xl text-6xl md:text-8xl">
+          <FaPython />
+        </motion.div>
+      </div>
+      {/* ------------------------------------------------------------- */}
+
+      {/* Kontainer Utama Hero */}
+      <div className="max-w-6xl mx-auto px-6 lg:px-8 flex-grow flex flex-col-reverse lg:flex-row items-center justify-between gap-12 pb-20 relative z-10">
         
         {/* Kolom Teks */}
         <motion.div 
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex-1 text-center lg:text-left z-10"
+          className="flex-1 text-center lg:text-left"
         >
           <p className="text-lg md:text-xl text-slate-500 font-semibold mb-2 font-opensans tracking-wide uppercase">
             Halo, Saya
@@ -124,9 +165,9 @@ const Hero = () => {
       </div>
 
       {/* Marquee Custom Dioptimasi */}
-      <div className="w-full bg-[#0a0a0a] py-5 border-t border-b border-gray-800 overflow-hidden flex whitespace-nowrap">
+      <div className="w-full bg-[#0a0a0a] py-5 border-t border-b border-gray-800 overflow-hidden flex whitespace-nowrap relative z-10">
         <motion.div
-          animate={{ x: ["0%", "-33.33%"] }} // Logic persentase yang jauh lebih stabil
+          animate={{ x: ["0%", "-33.33%"] }} 
           transition={{ ease: "linear", duration: 30, repeat: Infinity }}
           className="flex items-center w-max"
         >
