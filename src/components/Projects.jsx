@@ -11,7 +11,7 @@ const projectsData = [
     image: "/image/robustahub.png", 
     tags: ["React", "Express.js", "Agritech", "B2B", "Payment Gateway"], 
     desc: "Platform B2B Agritech E-Commerce yang dirancang khusus sebagai penghubung langsung antara petani kopi Robusta di Lampung dengan berbagai coffee shop di seluruh Indonesia untuk memotong rantai pasok yang panjang.", 
-    link: "https://github.com/fayiz-akbar" 
+    link: "https://github.com/Fayiz-Akbar/robustahub" 
   },
   { 
     id: 2, 
