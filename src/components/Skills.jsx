@@ -7,7 +7,8 @@ import {
 import { 
   SiJavascript, SiMongodb, SiSqlite, SiMysql, 
   SiTailwindcss, SiPostgresql, SiFlutter, SiDart,
-  SiExpress, SiVite, SiFigma, SiPostman
+  SiExpress, SiVite, SiFigma, SiPostman,
+  SiSupabase, SiVercel, SiNetlify, SiCloudflare, SiRender
 } from "react-icons/si";
 import { FiDatabase, FiLayout, FiServer, FiSmartphone, FiTool, FiCpu } from "react-icons/fi";
 
@@ -41,6 +42,7 @@ const Skills = () => {
       icon: <FiDatabase className="text-green-500" size={24} />,
       skills: [
         { name: "PostgreSQL", icon: <SiPostgresql className="text-[#336791]" /> },
+        { name: "Supabase", icon: <SiSupabase className="text-[#3ECF8E]" /> },
         { name: "MySQL", icon: <SiMysql className="text-[#4479A1]" /> },
         { name: "MongoDB", icon: <SiMongodb className="text-[#47A248]" /> },
         { name: "SQLite", icon: <SiSqlite className="text-[#003B57]" /> },
@@ -70,6 +72,10 @@ const Skills = () => {
         { name: "Docker", icon: <FaDocker className="text-[#2496ED]" /> },
         { name: "Git", icon: <FaGitAlt className="text-[#F05032]" /> },
         { name: "GitHub", icon: <FaGithub className="text-slate-800" /> },
+        { name: "Cloudflare", icon: <SiCloudflare className="text-[#F38020]" /> },
+        { name: "Vercel", icon: <SiVercel className="text-black" /> },
+        { name: "Netlify", icon: <SiNetlify className="text-[#00C7B7]" /> },
+        { name: "Render", icon: <SiRender className="text-[#46E3B7]" /> },
         { name: "Figma", icon: <SiFigma className="text-[#F24E1E]" /> },
         { name: "Postman", icon: <SiPostman className="text-[#FF6C37]" /> },
       ]
@@ -94,7 +100,7 @@ const Skills = () => {
       {/* Background Ornament */}
       <div className="absolute top-1/4 left-0 w-72 h-72 bg-blue-50 rounded-full blur-3xl opacity-60 -translate-x-1/2"></div>
       
-      <div className="max-w-6xl mx-auto px-6 lg:px-12 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
         
         {/* Header Section */}
         <motion.div 
@@ -113,40 +119,40 @@ const Skills = () => {
           </p>
         </motion.div>
 
-        {/* Grid Kategori */}
+        {/* Grid Kategori (BERUBAH MENJADI 2 KOLOM DI HP) */}
         <motion.div 
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8"
         >
           {skillCategories.map((category, index) => (
             <motion.div 
               key={index}
               variants={itemVariants}
               whileHover={{ y: -5 }}
-              className="bg-[#f8f9fa] rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-[0_15px_30px_rgba(24,55,88,0.08)] transition-all duration-300"
+              className="bg-[#f8f9fa] rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-100 shadow-sm hover:shadow-[0_15px_30px_rgba(24,55,88,0.08)] transition-all duration-300"
             >
               {/* Header Kategori */}
-              <div className="flex items-center gap-3 mb-6 pb-4 border-b border-slate-200/60">
-                <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-sm">
-                  {category.icon}
+              <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6 pb-3 sm:pb-4 border-b border-slate-200/60">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-lg flex items-center justify-center shadow-sm flex-shrink-0">
+                  <span className="scale-75 sm:scale-100">{category.icon}</span>
                 </div>
-                <h3 className="text-lg font-bold text-[#183758] font-poppins">
+                <h3 className="text-xs sm:text-lg font-bold text-[#183758] font-poppins leading-tight">
                   {category.category}
                 </h3>
               </div>
 
-              {/* List Skills di dalam Kategori */}
-              <div className="flex flex-wrap gap-3">
+              {/* List Skills di dalam Kategori (Fleksibel & proporsional untuk 2 Kolom) */}
+              <div className="flex flex-wrap gap-1.5 sm:gap-3">
                 {category.skills.map((skill, idx) => (
                   <div 
                     key={idx}
-                    className="flex items-center gap-2 bg-white px-3 py-2 rounded-lg border border-slate-100 shadow-sm hover:border-blue-200 hover:bg-blue-50/50 transition-colors cursor-default group"
+                    className="flex items-center gap-1 sm:gap-2 bg-white px-2 py-1.5 rounded-lg border border-slate-100 shadow-sm hover:border-blue-200 hover:bg-blue-50/50 transition-colors cursor-default group"
                   >
-                    <span className="text-lg group-hover:scale-110 transition-transform">{skill.icon}</span>
-                    <span className="text-sm font-semibold text-slate-600 font-opensans">{skill.name}</span>
+                    <span className="text-sm sm:text-lg group-hover:scale-110 transition-transform flex-shrink-0">{skill.icon}</span>
+                    <span className="text-[10px] sm:text-sm font-semibold text-slate-600 font-opensans">{skill.name}</span>
                   </div>
                 ))}
               </div>

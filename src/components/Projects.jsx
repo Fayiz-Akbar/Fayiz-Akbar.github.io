@@ -23,32 +23,166 @@ const projectsData = [
     link: "https://empath-ai.netlify.app/" 
   },
   { 
-    id: 3, 
+    id: 5, 
     title: "Unila Festival", 
     categories: ["Web"], 
     image: "/image/unilafest.jpeg", 
-    imagePosition: "object-top", // <--- TAMBAHAN: Mengatur fokus gambar ke atas
+    imagePosition: "object-top",
     tags: ["Laravel", "React", "Tailwind", "PostgreSQL"], 
     desc: "Website pusat informasi event yang diselenggarakan oleh Hima/UKM di Universitas Lampung. Dibangun dengan sistem role-based access control untuk memisahkan akun pengguna biasa dan panitia acara.", 
     link: "https://github.com/Fayiz-Akbar/Unila-Festival" 
   },
-  { id: 4, title: "Klasifikasi Jenis Sampah", categories: ["AI & ML"], image: "/image/Akurasi.jpg", tags: ["Deep Learning", "Python", "CNN"], desc: "Membangun model Convolutional Neural Network (CNN) dengan akurasi 85% untuk mengklasifikasikan berbagai gambar jenis sampah guna mendukung sistem daur ulang otomatis.", link: "https://github.com/Fayiz-Akbar/Submission-Proyek-Akhir-Belajar-Deep-Learning_Fayiz-Akbar-Daifullah_2315061011" },
-  { id: 5, title: "Aplikasi Kantong Pintar", categories: ["Mobile"], image: "/image/kantongpintar.jpeg",imagePosition: "object-top", tags: ["Flutter", "Dart", "SQLite"], desc: "Aplikasi manajemen keuangan pribadi berbasis mobile untuk mencatat arus kas pemasukan dan pengeluaran harian dengan antarmuka yang sangat user-friendly.", link: "https://github.com/firmanfarelrichardo/kantongpintar" },
-  { id: 6, title: "GreenMetric Unila", categories: ["Web"], image: "/image/greenmetric.png", imagePosition: "object-top", tags: ["WordPress", "CMS"], desc: "Portal web informasi resmi mengenai pencapaian dan laporan pemeringkatan UI GreenMetric untuk kampus Universitas Lampung.", link: "https://greenmetric.unila.ac.id/" },
-  { id: 7, title: "Web E-Commerce BookHaven", categories: ["Web"], image: "/image/bookhaven.jpg", tags: ["Laravel", "React", "Tailwind"], desc: "Platform Web full-stack manajemen e-commerce buku dengan backend kokoh menggunakan Laravel dan antarmuka responsif menggunakan React.", link: "https://github.com/Fayiz-Akbar/website-buku-Web_Framework" },
-  { id: 8, title: "Desa Merak Batin", categories: ["Web"], image: "/image/merakbatin.png", imagePosition: "object-top", tags: ["PHP", "JS", "CSS"], desc: "Website profil digital dan sistem informasi peta potensi tematik untuk mendukung program pembangunan Desa Merak Batin, Natar.", link: "https://desamerakbatin.infinityfreeapp.com/index.php?i=1" },
-  { id: 9, title: "Prediksi Udara (ARIMA)", categories: ["AI & ML"], image: "/image/Prediksi Kualitas Udara.png", tags: ["Python", "Time Series"], desc: "Analisis dan prediksi kadar polutan PM2.5 harian di wilayah Jakarta menggunakan algoritma pemodelan statistik time-series ARIMA.", link: "https://github.com/Fayiz-Akbar/Analisis-dan_Prediksi-Kadar_PM2.5_Harian_Jakarta_dengan_Model_ARIMA" },
-  { id: 10, title: "Smart Agriculture System", categories: ["Internet of Things", "Web"], image: "/image/iot2.png", tags: ["HTML", "PHP", "IoT"], desc: "Website monitoring interaktif dan kontrol tanaman cerdas yang terhubung langsung ke infrastruktur hardware dan sensor Internet of Things (IoT).", link: "https://github.com/Fayiz-Akbar/Smart-Agriculture-System" },
-  { id: 11, title: "Dashboard Penjualan", categories: ["Web"], image: "/image/Dashboard.jpg", tags: ["PHP", "MySQL"], desc: "Aplikasi Dashboard admin interaktif yang dilengkapi dengan grafik analitik untuk memantau tren penjualan harian serta sirkulasi stok barang gudang.", link: "https://github.com/Fayiz-Akbar/Inventaris-Elektronik" },
-  { id: 12, title: "Analisis Sentimen Shopee", categories: ["AI & ML"], image: "/image/Hasil Latih Model 2.png", tags: ["Python", "NLP", "Naive Bayes"], desc: "Penerapan Natural Language Processing (NLP) untuk analisis sentimen terhadap lebih dari 2000 ulasan pengguna aplikasi Shopee menggunakan algoritma klasifikasi teks.", link: "https://github.com/Fayiz-Akbar/Analisis-Sentimen-Aplikasi-Shopee" },
-  { id: 13, title: "XBundle", categories: ["Web"], image: "/image/xbundle.png", tags: ["HTML", "JS", "PHP"], desc: "Platform e-commerce kolaboratif inovatif yang menyediakan berbagai pilihan produk bundling silang antar toko dengan penawaran harga yang sangat terjangkau.", link: "https://github.com/SultanBani/TUBES_PRK_PEMWEB_2025" },
-  { id: 14, title: "Upaluk Universitas Lampung", categories: ["Web"], image: "/image/upaluk.png", imagePosition: "object-top", tags: ["WordPress", "CMS"], desc: "Website Profile institusional yang diperuntukkan bagi layanan UPA Uji Kompetensi resmi milik Universitas Lampung.", link: "https://upa-luk.unila.ac.id/" },
-  { id: 15, title: "LiteraStore", categories: ["Web"], image: "/image/literastore.png", tags: ["HTML", "CSS", "JS"], desc: "Website interaktif untuk layanan Jual Beli Buku Online yang dibangun sepenuhnya menggunakan kekuatan murni Vanilla JavaScript.", link: "https://github.com/Fayiz-Akbar/Website-jual-buku-" },
-  { id: 16, title: "SMPN 18 Bandar Lampung", categories: ["Web"], image: "/image/smpn18.png", imagePosition: "object-top", tags: ["WordPress", "CMS"], desc: "Website profil sekolah profesional yang menampilkan lebih dari 10 halaman informasi akademik dan kegiatan ekstrakurikuler siswa.", link: "https://smpn18bdl.sch.id/" },
-  { id: 17, title: "Sistem Rekomendasi Film", categories: ["AI & ML"], image: "/image/Distribusi Rating Film.png", tags: ["Machine Learning", "Python"], desc: "Sistem rekomendasi film cerdas berbasis collaborative filtering dengan pendekatan user-item rating untuk memberikan saran film personal kepada pengguna.", link: "https://github.com/Fayiz-Akbar/Sistem_Rekomendasi_Film" },
-  { id: 18, title: "My Unila Lost & Found", categories: ["Web"], image: "/image/unilafound.png", imagePosition: "object-top", tags: ["HTML", "JS", "PHP"], desc: "Platform sosial digital berbasis komunitas untuk membantu mahasiswa mencari dan melaporkan barang yang hilang di lingkungan Universitas Lampung.", link: "https://myunila-lostfound.infinityfreeapp.com" },
-  { id: 19, title: "Relantara", categories: ["Web"], image: "/image/relantara.png", imagePosition: "object-top", tags: ["PHP", "CSS"], desc: "Sistem informasi manajemen relawan terintegrasi yang mempertemukan pihak penyelenggara acara dengan kandidat relawan potensial.", link: "https://github.com/Fayiz-Akbar/Relantara" },
-  { id: 20, title: "Web Service Buku (API)", categories: ["Web"], image: "/image/webservice.jpg", tags: ["PHP", "PostgreSQL", "API"], desc: "Membangun arsitektur RESTful API murni menggunakan PHP native dan PostgreSQL untuk mengelola aliran data buku dengan endpoint CRUD yang aman.", link: "https://github.com/Fayiz-Akbar/Web-Service-katalog-buku-digital" },
+  { 
+    id: 8, 
+    title: "GreenMetric Unila", 
+    categories: ["Web"], 
+    image: "/image/greenmetric.png", 
+    imagePosition: "object-top", 
+    tags: ["WordPress", "CMS"], 
+    desc: "Portal web informasi resmi mengenai pencapaian dan laporan pemeringkatan UI GreenMetric untuk kampus Universitas Lampung.", 
+    link: "https://greenmetric.unila.ac.id/" 
+  },
+  { 
+    id: 6, 
+    title: "Klasifikasi Jenis Sampah", 
+    categories: ["AI & ML"], 
+    image: "/image/Akurasi.jpg", 
+    tags: ["Deep Learning", "Python", "CNN"], 
+    desc: "Membangun model Convolutional Neural Network (CNN) dengan akurasi 85% untuk mengklasifikasikan berbagai gambar jenis sampah guna mendukung sistem daur ulang otomatis.", 
+    link: "https://github.com/Fayiz-Akbar/Submission-Proyek-Akhir-Belajar-Deep-Learning_Fayiz-Akbar-Daifullah_2315061011" 
+  },
+  { 
+    id: 4, 
+    title: "E-Library", 
+    categories: ["Mobile"], 
+    image: "/image/e-library.jpeg", 
+    imagePosition: "object-top", 
+    tags: ["Express.js", "React", "Tailwind", "PostgreSQL"], 
+    desc: "Aplikasi mobile untuk manajemen perpustakaan digital yang memungkinkan pengguna untuk mencari, meminjam, dan mengelola buku dengan ada fitur scan QR code untuk proses peminjaman dan pengembalian buku secara otomatis.", 
+    link: "https://github.com/Fayiz-Akbar/E-Library_Campus" 
+  },
+  { 
+    id: 7, 
+    title: "Aplikasi Kantong Pintar", 
+    categories: ["Mobile"], 
+    image: "/image/kantongpintar.jpeg",
+    imagePosition: "object-top", 
+    tags: ["Flutter", "Dart", "SQLite"], 
+    desc: "Aplikasi manajemen keuangan pribadi berbasis mobile untuk mencatat arus kas pemasukan dan pengeluaran harian dengan antarmuka yang sangat user-friendly.", 
+    link: "https://github.com/firmanfarelrichardo/kantongpintar" 
+  },
+  { 
+    id: 9, 
+    title: "Web E-Commerce BookHaven", 
+    categories: ["Web"], 
+    image: "/image/bookhaven.jpg", 
+    tags: ["Laravel", "React", "Tailwind"], 
+    desc: "Platform Web full-stack manajemen e-commerce buku dengan backend kokoh menggunakan Laravel dan antarmuka responsif menggunakan React.", 
+    link: "https://github.com/Fayiz-Akbar/website-buku-Web_Framework" 
+  },
+  { 
+    id: 10, 
+    title: "Desa Merak Batin", 
+    categories: ["Web"], 
+    image: "/image/merakbatin.png", 
+    imagePosition: "object-top", 
+    tags: ["PHP", "JS", "CSS"], 
+    desc: "Website profil digital dan sistem informasi peta potensi tematik untuk mendukung program pembangunan Desa Merak Batin, Natar.", 
+    link: "https://desamerakbatin.infinityfreeapp.com/index.php?i=1" 
+  },
+  { 
+    id: 11, 
+    title: "Prediksi Udara (ARIMA)", 
+    categories: ["AI & ML"], 
+    image: "/image/Prediksi Kualitas Udara.png", 
+    tags: ["Python", "Time Series"], 
+    desc: "Analisis dan prediksi kadar polutan PM2.5 harian di wilayah Jakarta menggunakan algoritma pemodelan statistik time-series ARIMA.", 
+    link: "https://github.com/Fayiz-Akbar/Analisis-dan_Prediksi-Kadar_PM2.5_Harian_Jakarta_dengan_Model_ARIMA" 
+  },
+  { 
+    id: 12, 
+    title: "Smart Agriculture System", 
+    categories: ["Internet of Things", "Web"], 
+    image: "/image/iot2.png", 
+    tags: ["HTML", "PHP", "IoT"], 
+    desc: "Website monitoring interaktif dan kontrol tanaman cerdas yang terhubung langsung ke infrastruktur hardware dan sensor Internet of Things (IoT).", 
+    link: "https://github.com/Fayiz-Akbar/Smart-Agriculture-System" 
+  },
+  { 
+    id: 13, 
+    title: "Dashboard Penjualan", 
+    categories: ["Web"], 
+    image: "/image/Dashboard.jpg", 
+    tags: ["PHP", "MySQL"], 
+    desc: "Aplikasi Dashboard admin interaktif yang dilengkapi dengan grafik analitik untuk memantau tren penjualan harian serta sirkulasi stok barang gudang.", 
+    link: "https://github.com/Fayiz-Akbar/Inventaris-Elektronik" 
+  },
+  { 
+    id: 14, 
+    title: "Analisis Sentimen Shopee", 
+    categories: ["AI & ML"], 
+    image: "/image/Hasil Latih Model 2.png", 
+    tags: ["Python", "NLP", "Naive Bayes"], 
+    desc: "Penerapan Natural Language Processing (NLP) untuk analisis sentimen terhadap lebih dari 2000 ulasan pengguna aplikasi Shopee menggunakan algoritma klasifikasi teks.", 
+    link: "https://github.com/Fayiz-Akbar/Analisis-Sentimen-Aplikasi-Shopee" 
+  },
+  { 
+    id: 15, 
+    title: "XBundle", 
+    categories: ["Web"], 
+    image: "/image/xbundle.png", 
+    tags: ["HTML", "JS", "PHP"], 
+    desc: "Platform e-commerce kolaboratif inovatif yang menyediakan berbagai pilihan produk bundling silang antar toko dengan penawaran harga yang sangat terjangkau.", 
+    link: "https://github.com/SultanBani/TUBES_PRK_PEMWEB_2025" 
+  },
+  { 
+    id: 16, 
+    title: "Upaluk Universitas Lampung", 
+    categories: ["Lainnya"], 
+    image: "/image/upaluk.png", 
+    imagePosition: "object-top", 
+    tags: ["WordPress", "CMS"], 
+    desc: "Website Profile institusional yang diperuntukkan bagi layanan UPA Uji Kompetensi resmi milik Universitas Lampung.", 
+    link: "https://upa-luk.unila.ac.id/" 
+  },
+  { 
+    id: 17, 
+    title: "LiteraStore", 
+    categories: ["Web"], 
+    image: "/image/literastore.png", 
+    tags: ["HTML", "CSS", "JS"], 
+    desc: "Website interaktif untuk layanan Jual Beli Buku Online yang dibangun sepenuhnya menggunakan kekuatan murni Vanilla JavaScript.", 
+    link: "https://github.com/Fayiz-Akbar/Website-jual-buku-" 
+  },
+  { 
+    id: 18, 
+    title: "SMPN 18 Bandar Lampung", 
+    categories: ["Lainnya"], 
+    image: "/image/smpn18.png", 
+    imagePosition: "object-top", 
+    tags: ["WordPress", "CMS"], 
+    desc: "Website profil sekolah profesional yang menampilkan lebih dari 10 halaman informasi akademik dan kegiatan ekstrakurikuler siswa.", 
+    link: "https://smpn18bdl.sch.id/" 
+  },
+  { 
+    id: 19, 
+    title: "Sistem Rekomendasi Film", 
+    categories: ["AI & ML"], 
+    image: "/image/Distribusi Rating Film.png", 
+    tags: ["Machine Learning", "Python"], 
+    desc: "Sistem rekomendasi film cerdas berbasis collaborative filtering dengan pendekatan user-item rating untuk memberikan saran film personal kepada pengguna.", 
+    link: "https://github.com/Fayiz-Akbar/Sistem_Rekomendasi_Film" 
+  },
+  { 
+    id: 20, 
+    title: "My Unila Lost & Found", 
+    categories: ["Web"], 
+    image: "/image/unilafound.png", 
+    imagePosition: "object-top", 
+    tags: ["HTML", "JS", "PHP"], 
+    desc: "Platform sosial digital berbasis komunitas untuk membantu mahasiswa mencari dan melaporkan barang yang hilang di lingkungan Universitas Lampung.", 
+    link: "https://myunila-lostfound.infinityfreeapp.com" 
+  }
 ];
 
 const tagColors = {
@@ -92,12 +226,15 @@ const Projects = () => {
   const [expandedId, setExpandedId] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
 
-  const filteredProjects = projectsData.filter((project) => 
-    activeCategory === "All" ? true : project.categories.includes(activeCategory)
-  );
+  // Perbaikan logika filter agar kategori khusus seperti "Lainnya" terpetakan dengan benar
+  const filteredProjects = projectsData.filter((project) => {
+    if (activeCategory === "All") return true;
+    return project.categories.includes(activeCategory);
+  });
 
   const handleLoadMore = () => setVisibleCount((prev) => prev + 6);
   const handleShowLess = () => setVisibleCount(6);
+  
   const handleCategoryChange = (cat) => {
     setActiveCategory(cat);
     setVisibleCount(6);
@@ -144,7 +281,6 @@ const Projects = () => {
                 <img 
                   src={proj.image} 
                   alt={proj.title} 
-                  // Menerapkan custom posisi dari data
                   className={`w-full h-full object-cover ${proj.imagePosition || 'object-center'}`} 
                   onError={(e) => { e.target.src = 'https://placehold.co/400x220/e2e8f0/183758?text=Project+Image'; }}
                 />
@@ -206,7 +342,6 @@ const Projects = () => {
                     <img 
                       src={project.image} 
                       alt={project.title} 
-                      // Menerapkan custom posisi dari data
                       className={`w-full h-full object-cover ${project.imagePosition || 'object-center'} group-hover:scale-105 transition-transform duration-500`}
                       onError={(e) => { e.target.src = 'https://placehold.co/400x220/e2e8f0/183758?text=Project+Image'; }}
                     />

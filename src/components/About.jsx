@@ -1,9 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FiMonitor, FiCpu, FiShield, FiWifi } from "react-icons/fi";
+import { FaGithub } from "react-icons/fa";
+import { GitHubCalendar } from "react-github-calendar";
 
 const About = () => {
-  // Data Bento Box (IoT di posisi terakhir, Cyber Security kembali)
+  // Data Bento Box
   const bentoCards = [
     {
       icon: <FiMonitor className="text-blue-500" size={22} />,
@@ -58,10 +60,10 @@ const About = () => {
           <h2 className="text-4xl font-extrabold text-[#183758] font-poppins mb-3">
             Tentang Saya
           </h2>
-          <div className="w-16 h-1.5 bg-gradient-to-r  from-blue-300 to-cyan-800 mx-auto rounded-full"></div>
+          <div className="w-16 h-1.5 bg-gradient-to-r from-blue-300 to-cyan-800 mx-auto rounded-full"></div>
         </motion.div>
 
-        {/* Layout Grid */}
+        {/* Layout Grid Teks & Bento Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           
           {/* Kolom Kiri: Teks Narasi */}
@@ -110,8 +112,48 @@ const About = () => {
               </motion.div>
             ))}
           </motion.div>
-
         </div>
+
+        {/* --- SECTION GITHUB CONTRIBUTION CALENDAR --- */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-12 bg-[#f8f9fa] p-6 rounded-2xl border border-slate-100 shadow-sm"
+        >
+          {/* Header Kalender */}
+          <div className="flex items-center gap-3 mb-6 pb-4 border-b border-slate-200/60">
+            <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-sm">
+              <FaGithub className="text-slate-800" size={22} />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-[#183758] font-poppins">
+                GitHub Contributions
+              </h3>
+              <p className="text-xs text-slate-400 font-opensans">
+                Aktivitas commit dan kontribusi kode saya yang terhitung di GitHub
+              </p>
+            </div>
+          </div>
+
+          {/* Grafik Kontribusi */}
+          <div className="overflow-x-auto pb-2 pt-1 min-w-0 w-full scrollbar-thin scrollbar-thumb-slate-200">
+            <div className="min-w-[760px] lg:min-w-full flex justify-center justify-items-center bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+              <GitHubCalendar 
+                username="Fayiz-Akbar" 
+                blockSize={12}
+                blockMargin={4}
+                fontSize={13}
+                colorScheme="light"
+                theme={{
+                  light: ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"],
+                }}
+              />
+            </div>
+          </div>
+        </motion.div>
+
       </div>
     </section>
   );
