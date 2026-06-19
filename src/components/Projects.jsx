@@ -1,188 +1,28 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { FiGithub, FiExternalLink, FiX } from "react-icons/fi";
+import React, { useState, useEffect, useMemo, useRef } from "react";
+import { motion, AnimatePresence, useInView } from "framer-motion";
+import { FiGithub, FiExternalLink, FiX, FiFolder } from "react-icons/fi";
 
-// --- DATA PROYEK ---
+// --- DATA PROYEK (Tetap Sama) ---
 const projectsData = [
-  { 
-    id: 1, 
-    title: "RobustaHub", 
-    categories: ["Web"], 
-    image: "/image/robustahub.png", 
-    tags: ["React", "Express.js", "Agritech", "B2B", "Payment Gateway"], 
-    desc: "Platform B2B Agritech E-Commerce yang dirancang khusus sebagai penghubung langsung antara petani kopi Robusta di Lampung dengan berbagai coffee shop di seluruh Indonesia untuk memotong rantai pasok yang panjang.", 
-    link: "https://github.com/Fayiz-Akbar/robustahub" 
-  },
-  { 
-    id: 2, 
-    title: "EmpathAI", 
-    categories: ["AI & ML", "Web"], 
-    image: "/image/empathai.png", 
-    tags: ["Node.js", "Express.js", "NLP", "Chatbot", "React", "MongoDB"], 
-    desc: "Sistem chatbot interaktif berbasis kecerdasan buatan (AI) yang dirancang untuk memberikan dukungan emosional. Sistem ini membantu pengguna dalam mengekspresikan dan memahami kondisi emosional mereka melalui analisis teks tingkat lanjut.", 
-    link: "https://empath-ai.netlify.app/" 
-  },
-  { 
-    id: 5, 
-    title: "Unila Festival", 
-    categories: ["Web"], 
-    image: "/image/unilafest.jpeg", 
-    imagePosition: "object-top",
-    tags: ["Laravel", "React", "Tailwind", "PostgreSQL"], 
-    desc: "Website pusat informasi event yang diselenggarakan oleh Hima/UKM di Universitas Lampung. Dibangun dengan sistem role-based access control untuk memisahkan akun pengguna biasa dan panitia acara.", 
-    link: "https://github.com/Fayiz-Akbar/Unila-Festival" 
-  },
-  { 
-    id: 8, 
-    title: "GreenMetric Unila", 
-    categories: ["Web"], 
-    image: "/image/greenmetric.png", 
-    imagePosition: "object-top", 
-    tags: ["WordPress", "CMS"], 
-    desc: "Portal web informasi resmi mengenai pencapaian dan laporan pemeringkatan UI GreenMetric untuk kampus Universitas Lampung.", 
-    link: "https://greenmetric.unila.ac.id/" 
-  },
-  { 
-    id: 6, 
-    title: "Klasifikasi Jenis Sampah", 
-    categories: ["AI & ML"], 
-    image: "/image/Akurasi.jpg", 
-    tags: ["Deep Learning", "Python", "CNN"], 
-    desc: "Membangun model Convolutional Neural Network (CNN) dengan akurasi 85% untuk mengklasifikasikan berbagai gambar jenis sampah guna mendukung sistem daur ulang otomatis.", 
-    link: "https://github.com/Fayiz-Akbar/Submission-Proyek-Akhir-Belajar-Deep-Learning_Fayiz-Akbar-Daifullah_2315061011" 
-  },
-  { 
-    id: 4, 
-    title: "E-Library", 
-    categories: ["Mobile"], 
-    image: "/image/e-library.jpeg", 
-    imagePosition: "object-top", 
-    tags: ["Express.js", "React", "Tailwind", "PostgreSQL"], 
-    desc: "Aplikasi mobile untuk manajemen perpustakaan digital yang memungkinkan pengguna untuk mencari, meminjam, dan mengelola buku dengan ada fitur scan QR code untuk proses peminjaman dan pengembalian buku secara otomatis.", 
-    link: "https://github.com/Fayiz-Akbar/E-Library_Campus" 
-  },
-  { 
-    id: 7, 
-    title: "Aplikasi Kantong Pintar", 
-    categories: ["Mobile"], 
-    image: "/image/kantongpintar.jpeg",
-    imagePosition: "object-top", 
-    tags: ["Flutter", "Dart", "SQLite"], 
-    desc: "Aplikasi manajemen keuangan pribadi berbasis mobile untuk mencatat arus kas pemasukan dan pengeluaran harian dengan antarmuka yang sangat user-friendly.", 
-    link: "https://github.com/firmanfarelrichardo/kantongpintar" 
-  },
-  { 
-    id: 9, 
-    title: "Web E-Commerce BookHaven", 
-    categories: ["Web"], 
-    image: "/image/bookhaven.jpg", 
-    tags: ["Laravel", "React", "Tailwind"], 
-    desc: "Platform Web full-stack manajemen e-commerce buku dengan backend kokoh menggunakan Laravel dan antarmuka responsif menggunakan React.", 
-    link: "https://github.com/Fayiz-Akbar/website-buku-Web_Framework" 
-  },
-  { 
-    id: 10, 
-    title: "Desa Merak Batin", 
-    categories: ["Web"], 
-    image: "/image/merakbatin.png", 
-    imagePosition: "object-top", 
-    tags: ["PHP", "JS", "CSS"], 
-    desc: "Website profil digital dan sistem informasi peta potensi tematik untuk mendukung program pembangunan Desa Merak Batin, Natar.", 
-    link: "https://desamerakbatin.infinityfreeapp.com/index.php?i=1" 
-  },
-  { 
-    id: 11, 
-    title: "Prediksi Udara (ARIMA)", 
-    categories: ["AI & ML"], 
-    image: "/image/Prediksi Kualitas Udara.png", 
-    tags: ["Python", "Time Series"], 
-    desc: "Analisis dan prediksi kadar polutan PM2.5 harian di wilayah Jakarta menggunakan algoritma pemodelan statistik time-series ARIMA.", 
-    link: "https://github.com/Fayiz-Akbar/Analisis-dan_Prediksi-Kadar_PM2.5_Harian_Jakarta_dengan_Model_ARIMA" 
-  },
-  { 
-    id: 12, 
-    title: "Smart Agriculture System", 
-    categories: ["Internet of Things", "Web"], 
-    image: "/image/iot2.png", 
-    tags: ["HTML", "PHP", "IoT"], 
-    desc: "Website monitoring interaktif dan kontrol tanaman cerdas yang terhubung langsung ke infrastruktur hardware dan sensor Internet of Things (IoT).", 
-    link: "https://github.com/Fayiz-Akbar/Smart-Agriculture-System" 
-  },
-  { 
-    id: 13, 
-    title: "Dashboard Penjualan", 
-    categories: ["Web"], 
-    image: "/image/Dashboard.jpg", 
-    tags: ["PHP", "MySQL"], 
-    desc: "Aplikasi Dashboard admin interaktif yang dilengkapi dengan grafik analitik untuk memantau tren penjualan harian serta sirkulasi stok barang gudang.", 
-    link: "https://github.com/Fayiz-Akbar/Inventaris-Elektronik" 
-  },
-  { 
-    id: 14, 
-    title: "Analisis Sentimen Shopee", 
-    categories: ["AI & ML"], 
-    image: "/image/Hasil Latih Model 2.png", 
-    tags: ["Python", "NLP", "Naive Bayes"], 
-    desc: "Penerapan Natural Language Processing (NLP) untuk analisis sentimen terhadap lebih dari 2000 ulasan pengguna aplikasi Shopee menggunakan algoritma klasifikasi teks.", 
-    link: "https://github.com/Fayiz-Akbar/Analisis-Sentimen-Aplikasi-Shopee" 
-  },
-  { 
-    id: 15, 
-    title: "XBundle", 
-    categories: ["Web"], 
-    image: "/image/xbundle.png", 
-    tags: ["HTML", "JS", "PHP"], 
-    desc: "Platform e-commerce kolaboratif inovatif yang menyediakan berbagai pilihan produk bundling silang antar toko dengan penawaran harga yang sangat terjangkau.", 
-    link: "https://github.com/SultanBani/TUBES_PRK_PEMWEB_2025" 
-  },
-  { 
-    id: 16, 
-    title: "Upaluk Universitas Lampung", 
-    categories: ["Lainnya"], 
-    image: "/image/upaluk.png", 
-    imagePosition: "object-top", 
-    tags: ["WordPress", "CMS"], 
-    desc: "Website Profile institusional yang diperuntukkan bagi layanan UPA Uji Kompetensi resmi milik Universitas Lampung.", 
-    link: "https://upa-luk.unila.ac.id/" 
-  },
-  { 
-    id: 17, 
-    title: "LiteraStore", 
-    categories: ["Web"], 
-    image: "/image/literastore.png", 
-    tags: ["HTML", "CSS", "JS"], 
-    desc: "Website interaktif untuk layanan Jual Beli Buku Online yang dibangun sepenuhnya menggunakan kekuatan murni Vanilla JavaScript.", 
-    link: "https://github.com/Fayiz-Akbar/Website-jual-buku-" 
-  },
-  { 
-    id: 18, 
-    title: "SMPN 18 Bandar Lampung", 
-    categories: ["Lainnya"], 
-    image: "/image/smpn18.png", 
-    imagePosition: "object-top", 
-    tags: ["WordPress", "CMS"], 
-    desc: "Website profil sekolah profesional yang menampilkan lebih dari 10 halaman informasi akademik dan kegiatan ekstrakurikuler siswa.", 
-    link: "https://smpn18bdl.sch.id/" 
-  },
-  { 
-    id: 19, 
-    title: "Sistem Rekomendasi Film", 
-    categories: ["AI & ML"], 
-    image: "/image/Distribusi Rating Film.png", 
-    tags: ["Machine Learning", "Python"], 
-    desc: "Sistem rekomendasi film cerdas berbasis collaborative filtering dengan pendekatan user-item rating untuk memberikan saran film personal kepada pengguna.", 
-    link: "https://github.com/Fayiz-Akbar/Sistem_Rekomendasi_Film" 
-  },
-  { 
-    id: 20, 
-    title: "My Unila Lost & Found", 
-    categories: ["Web"], 
-    image: "/image/unilafound.png", 
-    imagePosition: "object-top", 
-    tags: ["HTML", "JS", "PHP"], 
-    desc: "Platform sosial digital berbasis komunitas untuk membantu mahasiswa mencari dan melaporkan barang yang hilang di lingkungan Universitas Lampung.", 
-    link: "https://myunila-lostfound.infinityfreeapp.com" 
-  }
+  { id: 1, title: "RobustaHub", categories: ["Web"], image: "/image/robustahub.png", tags: ["React", "Express.js", "Agritech", "B2B", "Payment Gateway"], desc: "Platform B2B Agritech E-Commerce yang dirancang khusus sebagai penghubung langsung antara petani kopi Robusta di Lampung dengan berbagai coffee shop di seluruh Indonesia untuk memotong rantai pasok yang panjang.", link: "https://github.com/Fayiz-Akbar/robustahub" },
+  { id: 2, title: "EmpathAI", categories: ["AI & ML", "Web"], image: "/image/empathai.png", tags: ["Node.js", "Express.js", "NLP", "Chatbot", "React", "MongoDB"], desc: "Sistem chatbot interaktif berbasis kecerdasan buatan (AI) yang dirancang untuk memberikan dukungan emosional.", link: "https://empath-ai.netlify.app/" },
+  { id: 5, title: "Unila Festival", categories: ["Web"], image: "/image/unilafest.jpeg", imagePosition: "object-top", tags: ["Laravel", "React", "Tailwind", "PostgreSQL"], desc: "Website pusat informasi event yang diselenggarakan oleh Hima/UKM di Universitas Lampung.", link: "https://github.com/Fayiz-Akbar/Unila-Festival" },
+  { id: 8, title: "GreenMetric Unila", categories: ["Web"], image: "/image/greenmetric.png", imagePosition: "object-top", tags: ["WordPress", "CMS"], desc: "Portal web informasi resmi UI GreenMetric untuk kampus Universitas Lampung.", link: "https://greenmetric.unila.ac.id/" },
+  { id: 6, title: "Klasifikasi Jenis Sampah", categories: ["AI & ML"], image: "/image/Akurasi.jpg", tags: ["Deep Learning", "Python", "CNN"], desc: "Membangun model CNN dengan akurasi 85% untuk mengklasifikasikan berbagai gambar jenis sampah.", link: "https://github.com/Fayiz-Akbar/Submission-Proyek-Akhir-Belajar-Deep-Learning_Fayiz-Akbar-Daifullah_2315061011" },
+  { id: 4, title: "E-Library", categories: ["Mobile"], image: "/image/e-library.jpeg", imagePosition: "object-top", tags: ["Express.js", "React", "Tailwind", "PostgreSQL"], desc: "Aplikasi mobile manajemen perpustakaan digital dengan fitur scan QR code.", link: "https://github.com/Fayiz-Akbar/E-Library_Campus" },
+  { id: 7, title: "Aplikasi Kantong Pintar", categories: ["Mobile"], image: "/image/kantongpintar.jpeg",imagePosition: "object-top", tags: ["Flutter", "Dart", "SQLite"], desc: "Aplikasi manajemen keuangan pribadi berbasis mobile untuk mencatat arus kas.", link: "https://github.com/firmanfarelrichardo/kantongpintar" },
+  { id: 9, title: "Web E-Commerce BookHaven", categories: ["Web"], image: "/image/bookhaven.jpg", tags: ["Laravel", "React", "Tailwind"], desc: "Platform Web full-stack manajemen e-commerce buku responsif.", link: "https://github.com/Fayiz-Akbar/website-buku-Web_Framework" },
+  { id: 10, title: "Desa Merak Batin", categories: ["Web"], image: "/image/merakbatin.png", imagePosition: "object-top", tags: ["PHP", "JS", "CSS"], desc: "Website profil digital dan sistem informasi peta potensi tematik Desa Merak Batin.", link: "https://desamerakbatin.infinityfreeapp.com/index.php?i=1" },
+  { id: 11, title: "Prediksi Udara (ARIMA)", categories: ["AI & ML"], image: "/image/Prediksi Kualitas Udara.png", tags: ["Python", "Time Series"], desc: "Analisis dan prediksi kadar polutan PM2.5 Jakarta menggunakan algoritma time-series ARIMA.", link: "https://github.com/Fayiz-Akbar/Analisis-dan_Prediksi-Kadar_PM2.5_Harian_Jakarta_dengan_Model_ARIMA" },
+  { id: 12, title: "Smart Agriculture System", categories: ["Internet of Things", "Web"], image: "/image/iot2.png", tags: ["HTML", "PHP", "IoT"], desc: "Website monitoring interaktif dan kontrol tanaman cerdas terhubung sensor IoT.", link: "https://github.com/Fayiz-Akbar/Smart-Agriculture-System" },
+  { id: 13, title: "Dashboard Penjualan", categories: ["Web"], image: "/image/Dashboard.jpg", tags: ["PHP", "MySQL"], desc: "Aplikasi Dashboard admin interaktif untuk memantau tren penjualan.", link: "https://github.com/Fayiz-Akbar/Inventaris-Elektronik" },
+  { id: 14, title: "Analisis Sentimen Shopee", categories: ["AI & ML"], image: "/image/Hasil Latih Model 2.png", tags: ["Python", "NLP", "Naive Bayes"], desc: "Penerapan NLP untuk analisis sentimen ulasan pengguna Shopee.", link: "https://github.com/Fayiz-Akbar/Analisis-Sentimen-Aplikasi-Shopee" },
+  { id: 15, title: "XBundle", categories: ["Web"], image: "/image/xbundle.png", tags: ["HTML", "JS", "PHP"], desc: "Platform e-commerce kolaboratif inovatif untuk produk bundling.", link: "https://github.com/SultanBani/TUBES_PRK_PEMWEB_2025" },
+  { id: 16, title: "Upaluk Universitas Lampung", categories: ["Lainnya"], image: "/image/upaluk.png", imagePosition: "object-top", tags: ["WordPress", "CMS"], desc: "Website Profile institusional layanan UPA Uji Kompetensi Universitas Lampung.", link: "https://upa-luk.unila.ac.id/" },
+  { id: 17, title: "LiteraStore", categories: ["Web"], image: "/image/literastore.png", tags: ["HTML", "CSS", "JS"], desc: "Website Jual Beli Buku Online murni menggunakan Vanilla JavaScript.", link: "https://github.com/Fayiz-Akbar/Website-jual-buku-" },
+  { id: 18, title: "SMPN 18 Bandar Lampung", categories: ["Lainnya"], image: "/image/smpn18.png", imagePosition: "object-top", tags: ["WordPress", "CMS"], desc: "Website profil sekolah profesional SMPN 18 Bandar Lampung.", link: "https://smpn18bdl.sch.id/" },
+  { id: 19, title: "Sistem Rekomendasi Film", categories: ["AI & ML"], image: "/image/Distribusi Rating Film.png", tags: ["Machine Learning", "Python"], desc: "Sistem rekomendasi film berbasis collaborative filtering.", link: "https://github.com/Fayiz-Akbar/Sistem_Rekomendasi_Film" },
+  { id: 20, title: "My Unila Lost & Found", categories: ["Web"], image: "/image/unilafound.png", imagePosition: "object-top", tags: ["HTML", "JS", "PHP"], desc: "Platform sosial digital komunitas untuk mencari barang hilang di Universitas Lampung.", link: "https://myunila-lostfound.infinityfreeapp.com" }
 ];
 
 const tagColors = {
@@ -220,13 +60,74 @@ const tagColors = {
 
 const categories = ["All", "Web", "AI & ML", "Mobile", "Internet of Things", "Lainnya"];
 
+// --- KOTAK DIGIT ROLL CASINO INDIVIDUAL (VERSI LIGHT/PUTIH KONTRAS) ---
+const CasinoDigit = ({ digit, delay, textColor }) => {
+  const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const spinningStrip = [...digits, ...digits, ...digits, ...digits]; 
+  
+  // Mengunci tinggi wadah agar angka pas di tengah dan tidak terpotong vertikal
+  const digitHeight = 58; 
+  const targetY = -((digits.length * 2) + parseInt(digit)) * digitHeight;
+
+  return (
+    <div className="h-[58px] w-9 overflow-hidden bg-[#f1f5f9] border border-slate-200 rounded-xl shadow-[inset_0_2px_4px_rgba(0,0,0,0.06)] flex justify-center items-center relative flex-shrink-0">
+      {/* Kaca refleksi transparan untuk efek 3D slot */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-black/[0.02] pointer-events-none z-10 rounded-xl" />
+      
+      <motion.div
+        initial={{ y: 0 }}
+        animate={{ y: targetY }}
+        transition={{ 
+          duration: 2.3, 
+          delay: delay, 
+          ease: [0.16, 1, 0.3, 1], // Animasi ngerem khas mesin slot
+        }}
+        className="absolute top-0 left-0 right-0"
+      >
+        {spinningStrip.map((d, index) => (
+          <span 
+            key={index} 
+            className={`text-4xl font-black ${textColor} font-poppins h-[58px] flex items-center justify-center tracking-tighter`}
+          >
+            {d}
+          </span>
+        ))}
+      </motion.div>
+    </div>
+  );
+};
+
+// --- CONTAINER BAGIAN UTAMA ANGKA SLOT ---
+const CasinoNumber = ({ value, textColor }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const digitArray = value.toString().padStart(2, '0').split('');
+
+  return (
+    <div ref={ref} className="flex gap-1 items-center justify-center p-1 bg-slate-100/40 rounded-2xl">
+      {isInView && digitArray.map((digit, index) => (
+        <CasinoDigit key={index} digit={digit} delay={index * 0.15} textColor={textColor} />
+      ))}
+    </div>
+  );
+};
+
 const Projects = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [visibleCount, setVisibleCount] = useState(6);
   const [expandedId, setExpandedId] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
 
-  // Perbaikan logika filter agar kategori khusus seperti "Lainnya" terpetakan dengan benar
+  // Hitung Data Statistik Real-time
+  const projectStats = useMemo(() => {
+    return {
+      All: projectsData.length,
+      Web: projectsData.filter(p => p.categories.includes("Web")).length,
+      AI: projectsData.filter(p => p.categories.includes("AI & ML")).length,
+      Mobile: projectsData.filter(p => p.categories.includes("Mobile")).length,
+    };
+  }, []);
+
   const filteredProjects = projectsData.filter((project) => {
     if (activeCategory === "All") return true;
     return project.categories.includes(activeCategory);
@@ -249,21 +150,62 @@ const Projects = () => {
     <>
       <section id="projects" className="py-24 bg-white relative overflow-hidden">
         
+        {/* Ornamen Background */}
+        <div className="absolute -top-10 -right-10 w-64 h-64 bg-blue-50 rounded-full blur-3xl opacity-70 z-0"></div>
+        <div className="absolute bottom-1/4 -left-10 w-48 h-48 bg-cyan-50 rounded-full blur-3xl opacity-60 z-0"></div>
+
         {/* HEADER SECTION */}
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 mb-10 text-center relative z-10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 mb-16 text-center relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-4xl font-extrabold text-[#183758] font-poppins mb-3">
-              Projects
+
+            <h2 className="text-5xl font-extrabold text-[#183758] font-poppins mb-4 tracking-tight">
+              Featured <span className="text-cyan-700">Projects</span>
             </h2>
-            <div className="w-16 h-1.5 bg-gradient-to-r from-blue-300 to-cyan-800 mx-auto rounded-full mb-6"></div>
-            <p className="text-slate-500 font-opensans max-w-2xl mx-auto">
+            <div className="w-24 h-2 bg-gradient-to-r from-blue-300 to-cyan-800 mx-auto rounded-full mb-8 shadow-sm"></div>
+            <p className="text-slate-600 font-opensans max-w-2xl mx-auto text-lg leading-relaxed">
               Kumpulan proyek yang telah saya bangun, mulai dari aplikasi berbasis web, kecerdasan buatan, hingga pengembangan antarmuka seluler.
             </p>
           </motion.div>
         </div>
 
-        {/* INFINITE MARQUEE GAMBAR PROYEK */}
-        <div className="w-full bg-slate-50 py-6 border-y border-slate-100 mb-12 flex overflow-hidden whitespace-nowrap relative z-10">
+        {/* --- BAGIAN STATISTIK CASINO BENTO BOX PUTIH BERSIH --- */}
+        <div className="max-w-5xl mx-auto px-6 mb-16 relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 bg-slate-50/60 rounded-3xl border border-slate-100 shadow-inner"
+          >
+            {/* Total Projects */}
+            <div className="flex flex-col items-center justify-center p-5 bg-white rounded-2xl border border-slate-100 shadow-sm w-full">
+              <CasinoNumber value={projectStats.All} textColor="text-blue-600" />
+              <p className="text-xs font-bold tracking-wider uppercase text-slate-500 font-poppins mt-3">Total Projects</p>
+            </div>
+            
+            {/* Web Apps */}
+            <div className="flex flex-col items-center justify-center p-5 bg-white rounded-2xl border border-slate-100 shadow-sm w-full">
+              <CasinoNumber value={projectStats.Web} textColor="text-emerald-600" />
+              <p className="text-xs font-bold tracking-wider uppercase text-slate-500 font-poppins mt-3">Web Apps</p>
+            </div>
+
+            {/* AI & ML Solutions */}
+            <div className="flex flex-col items-center justify-center p-5 bg-white rounded-2xl border border-slate-100 shadow-sm w-full">
+              <CasinoNumber value={projectStats.AI} textColor="text-purple-600" />
+              <p className="text-xs font-bold tracking-wider uppercase text-slate-500 font-poppins mt-3">AI & ML Solutions</p>
+            </div>
+
+            {/* Mobile Dev */}
+            <div className="flex flex-col items-center justify-center p-5 bg-white rounded-2xl border border-slate-100 shadow-sm w-full">
+              <CasinoNumber value={projectStats.Mobile} textColor="text-cyan-600" />
+              <p className="text-xs font-bold tracking-wider uppercase text-slate-500 font-poppins mt-3">Mobile Dev</p>
+            </div>
+          </motion.div>
+        </div>
+        {/* ------------------------------------------------------------------ */}
+
+        {/* INFINITE MARQUEE GAMBAR PROYEK (GESER SEPERTI SEBELUMNYA) */}
+        <div className="w-full bg-slate-50 py-6 border-y border-slate-100 mb-12 flex overflow-hidden whitespace-nowrap relative z-10 shadow-inner">
           <motion.div
             animate={{ x: ["0%", "-50%"] }}
             transition={{ ease: "linear", duration: 40, repeat: Infinity }}
@@ -318,7 +260,7 @@ const Projects = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.3 }}
-                  className="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(24,55,88,0.1)] transition-all duration-300 flex flex-col group"
+                  className="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(24,55,88,0.1)] transition-all duration-300 flex flex-col group relative z-10"
                 >
                   {/* Image Cover */}
                   <div 
@@ -385,7 +327,7 @@ const Projects = () => {
                       href={project.link} 
                       target="_blank" 
                       rel="noreferrer" 
-                      className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl border border-slate-200 text-slate-600 font-semibold text-sm hover:bg-[#183758] hover:border-[#183758] hover:text-white transition-colors duration-300"
+                      className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl border border-slate-200 text-slate-600 font-semibold text-sm hover:bg-[#183758] hover:border-[#183758] hover:text-white transition-colors duration-300 shadow-sm"
                     >
                       {project.link.includes('github.com') ? <FiGithub size={16} /> : <FiExternalLink size={16} />}
                       {project.link.includes('github.com') ? 'Source Code' : 'Kunjungi Live'}
@@ -398,7 +340,7 @@ const Projects = () => {
 
           {/* LOAD MORE / SHOW LESS BUTTON */}
           {filteredProjects.length > 6 && (
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex justify-center mt-8">
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex justify-center mt-8 relative z-10">
               {visibleCount < filteredProjects.length ? (
                 <button 
                   onClick={handleLoadMore}
@@ -420,7 +362,7 @@ const Projects = () => {
         </div>
       </section>
 
-      {/* MODAL LIGHTBOX FULLSCREEN UNTUK GAMBAR */}
+      {/* MODAL LIGHTBOX FULLSCREEN */}
       <AnimatePresence>
         {selectedImage && (
           <motion.div 
