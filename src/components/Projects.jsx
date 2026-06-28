@@ -294,7 +294,7 @@ const ProjectDetailModal = ({ project, onClose }) => {
         className="fixed inset-0 z-[95] flex items-center justify-center p-3 sm:p-6 pointer-events-none"
       >
         <div
-          className="relative bg-white rounded-3xl shadow-2xl overflow-hidden w-full max-w-7xl max-h-[92vh] flex flex-col lg:flex-row pointer-events-auto"
+          className="relative bg-white rounded-3xl shadow-2xl overflow-y-auto lg:overflow-hidden w-full max-w-7xl max-h-[92vh] flex flex-col lg:flex-row pointer-events-auto"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Tombol Tutup */}
@@ -306,7 +306,7 @@ const ProjectDetailModal = ({ project, onClose }) => {
           </button>
 
           {/* ===== KOLOM KIRI: FOTO ===== */}
-          <div className="lg:w-[68%] bg-slate-900 relative flex-shrink-0 overflow-hidden" style={{ minHeight: '320px' }}>
+          <div className="h-56 lg:h-auto lg:w-[68%] bg-slate-900 relative flex-shrink-0 overflow-hidden">
             {/* Gambar Utama */}
             <AnimatePresence mode="wait">
               <motion.img
@@ -318,7 +318,7 @@ const ProjectDetailModal = ({ project, onClose }) => {
                 src={images[currentImageIndex]}
                 alt={`${project.title} - foto ${currentImageIndex + 1}`}
                 className={`w-full h-full object-cover cursor-zoom-in ${project.imagePosition || 'object-top'}`}
-                style={{ minHeight: '320px', maxHeight: '75vh' }}
+                style={{ minHeight: 'auto', maxHeight: '75vh' }}
                 onClick={() => setLightboxImage(images[currentImageIndex])}
                 onError={(e) => { e.target.src = 'https://placehold.co/800x500/e2e8f0/183758?text=Project+Image'; }}
               />
@@ -397,7 +397,7 @@ const ProjectDetailModal = ({ project, onClose }) => {
           </div>
 
           {/* ===== KOLOM KANAN: DETAIL ===== */}
-          <div className="lg:w-[32%] flex flex-col overflow-y-auto">
+          <div className="lg:w-[32%] flex flex-col lg:overflow-y-auto">
             <div className="p-7 flex flex-col h-full">
               {/* Kategori badge */}
               <div className="flex flex-wrap gap-2 mb-3">
