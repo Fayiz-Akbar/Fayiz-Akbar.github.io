@@ -8,7 +8,8 @@ import {
   SiJavascript, SiMongodb, SiSqlite, SiMysql, 
   SiTailwindcss, SiPostgresql, SiFlutter, SiDart,
   SiExpress, SiVite, SiFigma, SiPostman,
-  SiSupabase, SiVercel, SiNetlify, SiCloudflare, SiRender
+  SiSupabase, SiVercel, SiNetlify, SiCloudflare, SiRender,
+  SiNextdotjs, SiPrisma
 } from "react-icons/si";
 import { FiDatabase, FiLayout, FiServer, FiSmartphone, FiTool, FiCpu } from "react-icons/fi";
 
@@ -20,6 +21,7 @@ const Skills = () => {
       icon: <FiLayout className="text-blue-500" size={24} />,
       skills: [
         { name: "React.js", icon: <FaReact className="text-[#61DAFB]" /> },
+        { name: "Next.js", icon: <SiNextdotjs className="text-black" /> },
         { name: "Tailwind CSS", icon: <SiTailwindcss className="text-[#38B2AC]" /> },
         { name: "Vite", icon: <SiVite className="text-[#646CFF]" /> },
         { name: "JavaScript", icon: <SiJavascript className="text-[#F7DF1E]" /> },
@@ -35,6 +37,7 @@ const Skills = () => {
         { name: "Express.js", icon: <SiExpress className="text-slate-700" /> },
         { name: "Laravel", icon: <FaLaravel className="text-[#FF2D20]" /> },
         { name: "Python", icon: <FaPython className="text-[#3776AB]" /> },
+        { name: "Prisma", icon: <SiPrisma className="text-[#2D3748]" /> },
       ]
     },
     {
