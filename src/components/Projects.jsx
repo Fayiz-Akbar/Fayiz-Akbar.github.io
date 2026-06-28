@@ -27,7 +27,7 @@ const projectsData = [
     link: "https://github.com/Fayiz-Akbar" 
   },
   { 
-    id: 2, title: "EmpathAI", categories: ["AI & ML", "Web"], 
+    id: 2, title: "EmpathAI", categories: ["Web", "AI & ML"], 
     image: "/image/empathai.png", 
     tags: ["Node.js", "Express.js", "NLP", "Chatbot", "React", "MongoDB"], 
     desc: "Sistem chatbot interaktif berbasis kecerdasan buatan (AI) yang dirancang untuk memberikan dukungan emosional.", 
@@ -138,7 +138,7 @@ const projectsData = [
     link: "https://github.com/Fayiz-Akbar/Website-jual-buku-" 
   },
   { 
-    id: 18, title: "SMPN 18 Bandar Lampung", categories: ["Lainnya"], 
+    id: 18, title: "SMPN 18 Bandar Lampung", categories: ["Web"], 
     image: "/image/smpn18.png", imagePosition: "object-top", 
     tags: ["WordPress", "CMS"], 
     desc: "Website profil sekolah profesional SMPN 18 Bandar Lampung.", 
@@ -512,9 +512,10 @@ const Projects = () => {
   const projectStats = useMemo(() => {
     return {
       All: projectsData.length,
-      Web: projectsData.filter(p => p.categories.includes("Web")).length,
-      AI: projectsData.filter(p => p.categories.includes("AI & ML")).length,
-      Mobile: projectsData.filter(p => p.categories.includes("Mobile")).length,
+      Web: projectsData.filter(p => p.categories[0] === "Web").length,
+      AI: projectsData.filter(p => p.categories[0] === "AI & ML").length,
+      Mobile: projectsData.filter(p => p.categories[0] === "Mobile").length,
+      IoT: projectsData.filter(p => p.categories[0] === "Internet of Things").length,
     };
   }, []);
 
@@ -563,7 +564,7 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 bg-slate-50/60 rounded-3xl border border-slate-100 shadow-inner"
+            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 p-4 bg-slate-50/60 rounded-3xl border border-slate-100 shadow-inner"
           >
             <div className="flex flex-col items-center justify-center p-5 bg-white rounded-2xl border border-slate-100 shadow-sm w-full">
               <CasinoNumber value={projectStats.All} textColor="text-blue-600" />
@@ -580,6 +581,10 @@ const Projects = () => {
             <div className="flex flex-col items-center justify-center p-5 bg-white rounded-2xl border border-slate-100 shadow-sm w-full">
               <CasinoNumber value={projectStats.Mobile} textColor="text-cyan-600" />
               <p className="text-xs font-bold tracking-wider uppercase text-slate-500 font-poppins mt-3">Mobile Dev</p>
+            </div>
+            <div className="flex flex-col items-center justify-center p-5 bg-white rounded-2xl border border-slate-100 shadow-sm w-full">
+              <CasinoNumber value={projectStats.IoT} textColor="text-orange-500" />
+              <p className="text-xs font-bold tracking-wider uppercase text-slate-500 font-poppins mt-3">IoT Projects</p>
             </div>
           </motion.div>
         </div>
