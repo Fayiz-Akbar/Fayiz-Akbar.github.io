@@ -10,7 +10,7 @@ const Education = () => {
       title: "Teknik Informatika (S1)",
       institution: "Universitas Lampung",
       period: "2023 - 2027",
-      description: "Fokus pada Pengembangan Perangkat Lunak dan Kecerdasan Buatan (Machine & Deep Learning).",
+      description: "Fokus pada Pengembangan Software (Web dan Mobile App) dan Kecerdasan Buatan.",
       badge: "IPK 3.90",
       badgeColor: "bg-purple-50 text-purple-600 border-purple-100"
     },

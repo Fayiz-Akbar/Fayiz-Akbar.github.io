@@ -7,7 +7,7 @@ const Experience = () => {
       company: "Telkomsel Smart Office Lampung",
       role: "Software Developer and Network Operations and Productivity",
       date: "Juni 2026 - Agustus 2026",
-      description: "Mengembangkan sebuah dashboard monitoring jaringan untuk Telkomsel guna memastikan keandalan dan performa jaringan. Membuat data dimasukkan ke website lalu dijadikan grafik analitik yang mudah dipahami, serta dilengkapi dengan fitur manajemen aktivitas (Tracker) untuk meningkatkan efisiensi operasional tim.",
+      description: "Mengembangkan sebuah dashboard monitoring jaringan untuk Telkomsel yang berfungsi memastikan keandalan dan performa jaringan. Membuat data dimasukkan ke website lalu dijadikan grafik analitik yang mudah dipahami, serta dilengkapi dengan fitur manajemen aktivitas untuk meningkatkan efisiensi operasional tim.",
       logo: "/image/telkomsel.jpg",
       docs: [
         "/image/experience1.jpeg",

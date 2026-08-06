@@ -15,7 +15,7 @@ const About = () => {
     {
       icon: <FiCpu className="text-purple-500" size={22} />,
       title: "AI & Machine Learning",
-      desc: "Eksplorasi arsitektur Deep Learning dan RAG-LLM untuk solusi komputasi cerdas.",
+      desc: "Eksplorasi arsitektur Deep Learning untuk solusi komputasi cerdas.",
     },
     {
       icon: <FiShield className="text-red-500" size={22} />,
@@ -25,7 +25,7 @@ const About = () => {
     {
       icon: <FiWifi className="text-green-500" size={22} />,
       title: "Internet of Things",
-      desc: "Mengeksplorasi infrastruktur jaringan dan cara kerja komunikasi fundamental antar perangkat.",
+      desc: "Mengeksplorasi infrastruktur jaringan dan cara kerja komunikasi antar perangkat.",
     },
   ];
 
@@ -78,7 +78,7 @@ const About = () => {
               Saya adalah mahasiswa <span className="font-semibold text-[#183758]">Teknik Informatika di Universitas Lampung</span>. Saya senang mengubah barisan kode yang rumit menjadi antarmuka visual yang sederhana dan fungsional.
             </p>
             <p className="text-base text-slate-600 font-opensans leading-relaxed">
-              Sebagai Fullstack Developer dan AI Engineer, fokus saya tidak hanya pada web tradisional. Saya aktif merancang sistem cerdas dan mengeksplorasi teknologi Machine Learning untuk memecahkan masalah nyata.
+              Sebagai Fullstack Developer dan AI Engineer, fokus saya tidak hanya pada web tradisional. Saya aktif merancang sistem cerdas dan mengeksplorasi teknologi untuk memecahkan masalah nyata.
             </p>
             <p className="text-base text-slate-600 font-opensans leading-relaxed">
               Saya memiliki rasa ingin tahu yang tinggi terhadap cara kerja fundamental suatu teknologi, terbiasa bekerja secara kolaboratif dalam tim, dan selalu antusias membangun solusi yang berdampak.
