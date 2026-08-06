@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
-import { FiGithub, FiExternalLink, FiX, FiChevronLeft, FiChevronRight, FiMaximize2 } from "react-icons/fi";
+import { FiGithub, FiExternalLink, FiX, FiChevronLeft, FiChevronRight, FiMaximize2, FiLock } from "react-icons/fi";
 
 // --- DATA PROYEK ---
 const projectsData = [
@@ -10,6 +10,15 @@ const projectsData = [
     tags: ["React", "Express.js", "Agritech", "B2B", "Payment Gateway"], 
     desc: "Platform B2B Agritech E-Commerce yang dirancang khusus sebagai penghubung langsung antara petani kopi Robusta di Lampung dengan berbagai coffee shop di seluruh Indonesia untuk memotong rantai pasok yang panjang.", 
     link: "https://github.com/Fayiz-Akbar/robustahub" 
+  },
+  {
+    id: 22, title: "Dashboard Monitoring Jaringan Telkomsel", categories: ["Web"],
+    image: "/image/telkomsel1.png",
+    tags: ["React", "Express.js", "PostgreSQL", "Docker"],
+    desc: "Membangun sistem pemantauan traffic dan performa jaringan telekomunikasi se-Provinsi Lampung dengan visualisasi metrik utama untuk mendukung analisis data dan mitigasi gangguan secara cepat",
+    link: "private",
+    isPrivate: true,
+    isConfidential: true
   },
   { 
     id: 21, title: "CorpMind AI", categories: ["Web", "AI & ML"], 
@@ -24,7 +33,8 @@ const projectsData = [
     ],
     tags: ["Next.js", "Prisma", "Express.js", "AI & ML", "Chatbot"], 
     desc: "Platform AI berbasis web yang dirancang untuk membantu perusahaan dan korporat dalam mengoptimalkan proses bisnis menggunakan kecerdasan buatan. CorpMind menyediakan fitur analisis data cerdas, chatbot berbasis AI, serta dashboard monitoring performa bisnis secara real-time.", 
-    link: "https://github.com/Fayiz-Akbar" 
+    link: "private",
+    isPrivate: true 
   },
   { 
     id: 2, title: "EmpathAI", categories: ["Web", "AI & ML"], 
@@ -194,6 +204,7 @@ const tagColors = {
   "AI & ML": "bg-violet-50 text-violet-700 border border-violet-200/60",
   "Next.js": "bg-slate-900 text-white border border-slate-700",
   "Prisma": "bg-teal-900 text-teal-100 border border-teal-700",
+  "Docker": "bg-blue-100 text-blue-800 border border-blue-300",
 };
 
 const categories = ["All", "Web", "AI & ML", "Mobile", "Internet of Things", "Lainnya"];
@@ -246,7 +257,7 @@ const CasinoNumber = ({ value, textColor }) => {
 };
 
 // --- PROJECT DETAIL MODAL ---
-const ProjectDetailModal = ({ project, onClose }) => {
+const ProjectDetailModal = ({ project, onClose, showToast }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [lightboxImage, setLightboxImage] = useState(null);
   
@@ -411,11 +422,19 @@ const ProjectDetailModal = ({ project, onClose }) => {
                 ))}
               </div>
 
+              {/* Disclaimer Rahasia */}
+              {project.isConfidential && (
+                <div className="mb-4 bg-orange-50 border border-orange-200 text-orange-800 text-xs px-3 py-2.5 rounded-lg flex items-start gap-2 shadow-sm">
+                  <p className="leading-relaxed">
+                    <strong></strong> Karena alasan kerahasiaan perusahaan (NDA), tangkapan layar antarmuka aplikasi aslinya tidak dapat saya tampilkan secara publik.
+                  </p>
+                </div>
+              )}
+
               {/* Judul */}
               <h2 className="text-2xl font-extrabold text-[#183758] font-poppins mb-1 leading-tight">
                 {project.title}
               </h2>
-
               {/* Divider */}
               <div className="w-12 h-1 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full mb-4" />
 
@@ -447,15 +466,25 @@ const ProjectDetailModal = ({ project, onClose }) => {
 
               {/* Tombol Aksi */}
               <div className="mt-auto space-y-3">
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-[#183758] text-white font-bold text-sm hover:bg-[#0f2540] transition-colors duration-300 shadow-md hover:shadow-lg"
-                >
-                  {project.link.includes('github.com') ? <FiGithub size={16} /> : <FiExternalLink size={16} />}
-                  {project.link.includes('github.com') ? 'Lihat Source Code' : 'Kunjungi Live'}
-                </a>
+                {project.isPrivate ? (
+                  <button
+                    onClick={() => showToast("Repositori bersifat Private dan tidak dapat diakses publik.")}
+                    className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-[#183758] text-white font-bold text-sm hover:bg-[#0f2540] transition-colors duration-300 shadow-md hover:shadow-lg"
+                  >
+                    <FiGithub size={16} />
+                    Lihat Source Code
+                  </button>
+                ) : (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-[#183758] text-white font-bold text-sm hover:bg-[#0f2540] transition-colors duration-300 shadow-md hover:shadow-lg"
+                  >
+                    {project.link.includes('github.com') ? <FiGithub size={16} /> : <FiExternalLink size={16} />}
+                    {project.link.includes('github.com') ? 'Lihat Source Code' : 'Kunjungi Live'}
+                  </a>
+                )}
                 <button
                   onClick={onClose}
                   className="flex items-center justify-center gap-2 w-full py-3 rounded-xl border-2 border-slate-200 text-slate-500 font-semibold text-sm hover:bg-slate-50 transition-colors duration-300"
@@ -508,6 +537,14 @@ const Projects = () => {
   const [visibleCount, setVisibleCount] = useState(6);
   const [selectedProject, setSelectedProject] = useState(null);
   const [marqueeImageLightbox, setMarqueeImageLightbox] = useState(null);
+  const [toastMessage, setToastMessage] = useState(null);
+
+  const showToast = (msg) => {
+    setToastMessage(msg);
+    setTimeout(() => {
+      setToastMessage(null);
+    }, 3000);
+  };
 
   const projectStats = useMemo(() => {
     return {
@@ -708,16 +745,26 @@ const Projects = () => {
                     </div>
 
                     {/* Tombol Source Code / Live */}
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl border border-slate-200 text-slate-600 font-semibold text-sm hover:bg-[#183758] hover:border-[#183758] hover:text-white transition-colors duration-300 shadow-sm mt-1"
-                    >
-                      {project.link.includes('github.com') ? <FiGithub size={15} /> : <FiExternalLink size={15} />}
-                      {project.link.includes('github.com') ? 'Source Code' : 'Kunjungi Live'}
-                    </a>
+                    {project.isPrivate ? (
+                      <button
+                        onClick={(e) => { e.stopPropagation(); showToast("Repositori bersifat Private dan tidak dapat diakses publik."); }}
+                        className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl border border-slate-200 text-slate-600 font-semibold text-sm hover:bg-[#183758] hover:border-[#183758] hover:text-white transition-colors duration-300 shadow-sm mt-1"
+                      >
+                        <FiGithub size={15} />
+                        Source Code
+                      </button>
+                    ) : (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl border border-slate-200 text-slate-600 font-semibold text-sm hover:bg-[#183758] hover:border-[#183758] hover:text-white transition-colors duration-300 shadow-sm mt-1"
+                      >
+                        {project.link.includes('github.com') ? <FiGithub size={15} /> : <FiExternalLink size={15} />}
+                        {project.link.includes('github.com') ? 'Source Code' : 'Kunjungi Live'}
+                      </a>
+                    )}
                   </div>
                 </motion.div>
               ))}
@@ -751,7 +798,22 @@ const Projects = () => {
       {/* PROJECT DETAIL MODAL */}
       <AnimatePresence>
         {selectedProject && (
-          <ProjectDetailModal project={selectedProject} onClose={closeProject} />
+          <ProjectDetailModal project={selectedProject} onClose={closeProject} showToast={showToast} />
+        )}
+      </AnimatePresence>
+
+      {/* CUSTOM TOAST NOTIFICATION */}
+      <AnimatePresence>
+        {toastMessage && (
+          <motion.div
+            initial={{ opacity: 0, y: 50, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 50, scale: 0.9 }}
+            className="fixed bottom-10 left-1/2 -translate-x-1/2 z-[999] bg-[#0f2540] text-white px-5 py-3 rounded-xl shadow-2xl flex items-center gap-3 border border-slate-700"
+          >
+            <FiLock className="text-cyan-400" size={18} />
+            <span className="font-opensans text-sm font-semibold">{toastMessage}</span>
+          </motion.div>
         )}
       </AnimatePresence>
 

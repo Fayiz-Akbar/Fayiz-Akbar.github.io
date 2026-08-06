@@ -118,7 +118,7 @@ const Skills = () => {
           </h2>
           <div className="w-16 h-1.5 bg-gradient-to-r from-blue-300 to-cyan-800 mx-auto rounded-full"></div>
           <p className="mt-4 text-slate-500 font-opensans max-w-2xl mx-auto">
-            Teknologi dan *tools* yang saya gunakan sehari-hari untuk membangun solusi digital yang tangguh, terukur, dan cerdas.
+            Teknologi dan tools yang saya gunakan sehari-hari untuk membangun solusi digital yang tangguh, terukur, dan cerdas.
           </p>
         </motion.div>
 
