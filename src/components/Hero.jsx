@@ -121,7 +121,7 @@ const Hero = () => {
             <a href="#projects" className="w-full sm:w-auto bg-[#183758] text-white px-8 py-3.5 rounded-full font-bold hover:bg-blue-700 hover:-translate-y-1 transition-all duration-300 shadow-[0_10px_20px_rgba(24,55,88,0.2)]">
               Explore My Projects
             </a>
-            <a href="/CV_Fayiz.pdf" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto border-2 border-[#183758] text-[#183758] px-8 py-3.5 rounded-full font-bold hover:bg-[#183758] hover:text-white hover:-translate-y-1 transition-all duration-300">
+            <a href="../../public/CV_Fayiz Akbar Daifullah.pdf" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto border-2 border-[#183758] text-[#183758] px-8 py-3.5 rounded-full font-bold hover:bg-[#183758] hover:text-white hover:-translate-y-1 transition-all duration-300">
               Download CV
             </a>
           </div>
