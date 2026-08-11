@@ -3,29 +3,37 @@ import { motion } from "framer-motion";
 import { FiMonitor, FiCpu, FiShield, FiWifi } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa";
 import { GitHubCalendar } from "react-github-calendar";
+import { GradientCard } from "./ui/gradient-card";
 
 const About = () => {
   // Data Bento Box
   const bentoCards = [
     {
-      icon: <FiMonitor className="text-blue-500" size={22} />,
       title: "Frontend & UI/UX",
       desc: "Menciptakan antarmuka visual yang interaktif, responsif, dan sangat fungsional.",
+      gradient: "blue",
+      imageUrl: "/images/frontend_3d.png",
+      maskBackground: true,
     },
     {
-      icon: <FiCpu className="text-purple-500" size={22} />,
       title: "AI & Machine Learning",
       desc: "Eksplorasi arsitektur Deep Learning untuk solusi komputasi cerdas.",
+      gradient: "purple",
+      imageUrl: "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Robot/3D/robot_3d.png",
     },
     {
-      icon: <FiShield className="text-red-500" size={22} />,
       title: "Cyber Security",
       desc: "Mempelajari praktik keamanan sistem informasi, kriptografi, dan manajemen kata sandi.",
+      gradient: "red",
+      imageUrl: "https://bvconuycpdvgzbvbkijl.supabase.co/storage/v1/object/public/sizes/b91186-shield/dynamic/400/color.webp",
+      maskBackground: true,
     },
     {
-      icon: <FiWifi className="text-green-500" size={22} />,
       title: "Internet of Things",
       desc: "Mengeksplorasi infrastruktur jaringan dan cara kerja komunikasi antar perangkat.",
+      gradient: "green",
+      imageUrl: "/images/iot_3d.png",
+      maskBackground: true,
     },
   ];
 
@@ -91,24 +99,17 @@ const About = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+            className="grid grid-cols-2 gap-3 md:gap-4"
           >
             {bentoCards.map((card, index) => (
-              <motion.div 
-                key={index}
-                variants={itemVariants}
-                whileHover={{ y: -3, scale: 1.02 }}
-                className="bg-[#f8f9fa] p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-[0_15px_30px_rgba(24,55,88,0.06)] transition-all duration-300 group"
-              >
-                <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center mb-3 shadow-sm group-hover:scale-110 transition-transform duration-300">
-                  {card.icon}
-                </div>
-                <h3 className="text-lg font-bold text-[#183758] font-poppins mb-1.5">
-                  {card.title}
-                </h3>
-                <p className="text-sm text-slate-500 font-opensans leading-relaxed">
-                  {card.desc}
-                </p>
+              <motion.div key={index} variants={itemVariants}>
+                <GradientCard 
+                  title={card.title}
+                  description={card.desc}
+                  gradient={card.gradient}
+                  imageUrl={card.imageUrl}
+                  maskBackground={card.maskBackground}
+                />
               </motion.div>
             ))}
           </motion.div>
