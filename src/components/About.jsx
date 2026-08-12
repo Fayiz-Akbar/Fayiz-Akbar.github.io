@@ -12,7 +12,7 @@ const About = () => {
       title: "Frontend & UI/UX",
       desc: "Menciptakan antarmuka visual yang interaktif, responsif, dan sangat fungsional.",
       gradient: "blue",
-      imageUrl: "/images/frontend_3d.png",
+      imageUrl: "/images/frontend_3d.webp",
       maskBackground: true,
     },
     {
@@ -32,7 +32,7 @@ const About = () => {
       title: "Internet of Things",
       desc: "Mengeksplorasi infrastruktur jaringan dan cara kerja komunikasi antar perangkat.",
       gradient: "green",
-      imageUrl: "/images/iot_3d.png",
+      imageUrl: "/images/iot_3d.webp",
       maskBackground: true,
     },
   ];
