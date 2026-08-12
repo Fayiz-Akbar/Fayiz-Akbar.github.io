@@ -106,6 +106,14 @@ const projectsData = [
     link: "https://github.com/Fayiz-Akbar/Analisis-dan_Prediksi-Kadar_PM2.5_Harian_Jakarta_dengan_Model_ARIMA" 
   },
   { 
+    id: 23, title: "Smart Deal Finder Bot", categories: ["Bot"], 
+    image: "/image/smartdeal-finder.jpeg", imagePosition: "object-top",
+    tags: ["Node.js", "JS", "Telegram Bot"], 
+    desc: "Sistem otomatisasi pemantau pasar iPhone bekas di Facebook Marketplace, FB Groups, dan OLX berbasis kriteria deal serta filter kelayakan barang secara real-time. Sistem ini dilengkapi Price Normalizer Engine (Regex) untuk memproses variasi penulisan harga, filter anti-scam, penyaring kata kunci minus/bypass, serta Stealth Browser Protocol untuk menghindari pemblokiran akun. Hasil analisa unit murah/BU dikirimkan otomatis ke Telegram lengkap dengan Canonical Clean URL dan sakelar kendali daya pintar (/start, /pause, /scan).", 
+    link: "private",
+    isPrivate: true
+  },
+  { 
     id: 12, title: "Smart Agriculture System", categories: ["Internet of Things", "Web"], 
     image: "/image/iot2.png", 
     tags: ["HTML", "PHP", "IoT"], 
@@ -205,9 +213,10 @@ const tagColors = {
   "Next.js": "bg-slate-900 text-white border border-slate-700",
   "Prisma": "bg-teal-900 text-teal-100 border border-teal-700",
   "Docker": "bg-blue-100 text-blue-800 border border-blue-300",
+  "Telegram Bot": "bg-sky-50 text-sky-500 border border-sky-200",
 };
 
-const categories = ["All", "Web", "AI & ML", "Mobile", "Internet of Things", "Lainnya"];
+const categories = ["All", "Web", "AI & ML", "Mobile", "Internet of Things", "Bot", "Lainnya"];
 
 // --- KOTAK DIGIT ROLL CASINO INDIVIDUAL ---
 const CasinoDigit = ({ digit, delay, textColor }) => {
@@ -553,6 +562,7 @@ const Projects = () => {
       AI: projectsData.filter(p => p.categories[0] === "AI & ML").length,
       Mobile: projectsData.filter(p => p.categories[0] === "Mobile").length,
       IoT: projectsData.filter(p => p.categories[0] === "Internet of Things").length,
+      Bot: projectsData.filter(p => p.categories[0] === "Bot").length,
     };
   }, []);
 
@@ -601,7 +611,7 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 p-4 bg-slate-50/60 rounded-3xl border border-slate-100 shadow-inner"
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 p-4 bg-slate-50/60 rounded-3xl border border-slate-100 shadow-inner"
           >
             <div className="flex flex-col items-center justify-center p-5 bg-white rounded-2xl border border-slate-100 shadow-sm w-full">
               <CasinoNumber value={projectStats.All} textColor="text-blue-600" />
@@ -622,6 +632,10 @@ const Projects = () => {
             <div className="flex flex-col items-center justify-center p-5 bg-white rounded-2xl border border-slate-100 shadow-sm w-full">
               <CasinoNumber value={projectStats.IoT} textColor="text-orange-500" />
               <p className="text-xs font-bold tracking-wider uppercase text-slate-500 font-poppins mt-3">IoT Projects</p>
+            </div>
+            <div className="flex flex-col items-center justify-center p-5 bg-white rounded-2xl border border-slate-100 shadow-sm w-full">
+              <CasinoNumber value={projectStats.Bot} textColor="text-sky-500" />
+              <p className="text-xs font-bold tracking-wider uppercase text-slate-500 font-poppins mt-3">Bots</p>
             </div>
           </motion.div>
         </div>
