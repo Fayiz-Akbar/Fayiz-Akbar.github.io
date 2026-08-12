@@ -339,6 +339,8 @@ const ProjectDetailModal = ({ project, onClose, showToast }) => {
                 alt={`${project.title} - foto ${currentImageIndex + 1}`}
                 className={`w-full h-full object-cover cursor-zoom-in ${project.imagePosition || 'object-top'}`}
                 style={{ minHeight: 'auto', maxHeight: '75vh' }}
+                loading="eager"
+                decoding="async"
                 onClick={() => setLightboxImage(images[currentImageIndex])}
                 onError={(e) => { e.target.src = 'https://placehold.co/800x500/e2e8f0/183758?text=Project+Image'; }}
               />
@@ -406,6 +408,8 @@ const ProjectDetailModal = ({ project, onClose, showToast }) => {
                           src={img}
                           alt={`thumb ${idx + 1}`}
                           className="w-full h-full object-cover"
+                          loading="lazy"
+                          decoding="async"
                           onError={(e) => { e.target.src = 'https://placehold.co/48x32/e2e8f0/183758?text=img'; }}
                         />
                       </button>
@@ -660,6 +664,8 @@ const Projects = () => {
                   src={proj.image} 
                   alt={proj.title} 
                   className={`w-full h-full object-cover ${proj.imagePosition || 'object-center'}`} 
+                  loading="lazy"
+                  decoding="async"
                   onError={(e) => { e.target.src = 'https://placehold.co/400x220/e2e8f0/183758?text=Project+Image'; }}
                 />
               </div>
@@ -723,6 +729,8 @@ const Projects = () => {
                       src={project.image} 
                       alt={project.title} 
                       className={`w-full h-full object-cover ${project.imagePosition || 'object-center'} group-hover:scale-105 transition-transform duration-500`}
+                      loading="lazy"
+                      decoding="async"
                       onError={(e) => { e.target.src = 'https://placehold.co/400x220/e2e8f0/183758?text=Project+Image'; }}
                     />
                   </div>
