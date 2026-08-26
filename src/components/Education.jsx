@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FiBookOpen, FiAward } from "react-icons/fi";
+import { FiAward } from "react-icons/fi";
 import { FaGraduationCap } from "react-icons/fa";
 
 const Education = () => {
@@ -22,15 +22,6 @@ const Education = () => {
       description: "Fokus pada Back-End Development menggunakan JavaScript dan arsitektur cloud.",
       badge: "Bootcamp",
       badgeColor: "bg-blue-50 text-blue-600 border-blue-100"
-    },
-    {
-      icon: <FiBookOpen className="text-orange-500" size={20} />,
-      title: "Ilmu Pengetahuan Alam (IPA)",
-      institution: "SMA Muhammadiyah 1 Palembang",
-      period: "2020 - 2023",
-      description: "Mempelajari dasar sains dan matematika sebagai landasan pemikiran logis.",
-      badge: "Sains",
-      badgeColor: "bg-orange-50 text-orange-600 border-orange-100"
     }
   ];
 
