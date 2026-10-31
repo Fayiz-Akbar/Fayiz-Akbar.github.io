@@ -7,14 +7,14 @@ const projectsData = [
   { 
     id: 24, title: "PT Cipta Bahari Sejuk", categories: ["Web"], 
     image: "/image/cbs-porto.jpeg", 
-    tags: ["React", "Tailwind", "Company Profile", "Konstruksi"], 
+    tags: ["React", "Tailwind", "Web"], 
     desc: "Website profil perusahaan (Company Profile) terpadu untuk PT Cipta Bahari Sejuk, kontraktor spesialis mekanikal, elektrikal, tata udara (HVAC), cold storage industri, pemipaan boiler uap, dan konstruksi panel. Menampilkan showcase portofolio proyek skala industri, legalitas resmi, katalog layanan teknis, serta hotline konsultasi langsung.", 
     link: "https://ciptabaharisejukofficial.com/" 
   },
   { 
     id: 23, title: "FXT Dental Clinic", categories: ["Web"], 
     image: "/image/fxt-dental.jpeg", 
-    tags: ["React", "Tailwind", "Company Profile", "Kesehatan"], 
+    tags: ["React", "Tailwind", "Web"], 
     desc: "Website profil perusahaan (Company Profile) modern dan responsif untuk klinik spesialis kesehatan gigi FXT Dental Clinic. Dilengkapi showcase katalog layanan perawatan gigi modern, informasi jadwal praktek dokter, fasilitas klinik, serta kemudahan integrasi navigasi dan reservasi jadwal pasien secara online.", 
     link: "https://fxtdentalclinic.com/" 
   },
