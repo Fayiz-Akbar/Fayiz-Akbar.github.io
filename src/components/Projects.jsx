@@ -5,6 +5,20 @@ import { FiGithub, FiExternalLink, FiX, FiChevronLeft, FiChevronRight, FiMaximiz
 // --- DATA PROYEK ---
 const projectsData = [
   { 
+    id: 24, title: "PT Cipta Bahari Sejuk", categories: ["Web"], 
+    image: "/image/cbs-porto.jpeg", 
+    tags: ["React", "Tailwind", "Company Profile", "Konstruksi"], 
+    desc: "Website profil perusahaan (Company Profile) terpadu untuk PT Cipta Bahari Sejuk, kontraktor spesialis mekanikal, elektrikal, tata udara (HVAC), cold storage industri, pemipaan boiler uap, dan konstruksi panel. Menampilkan showcase portofolio proyek skala industri, legalitas resmi, katalog layanan teknis, serta hotline konsultasi langsung.", 
+    link: "https://ciptabaharisejukofficial.com/" 
+  },
+  { 
+    id: 23, title: "FXT Dental Clinic", categories: ["Web"], 
+    image: "/image/fxt-dental.jpeg", 
+    tags: ["React", "Tailwind", "Company Profile", "Kesehatan"], 
+    desc: "Website profil perusahaan (Company Profile) modern dan responsif untuk klinik spesialis kesehatan gigi FXT Dental Clinic. Dilengkapi showcase katalog layanan perawatan gigi modern, informasi jadwal praktek dokter, fasilitas klinik, serta kemudahan integrasi navigasi dan reservasi jadwal pasien secara online.", 
+    link: "https://fxtdentalclinic.com/" 
+  },
+  { 
     id: 1, title: "RobustaHub", categories: ["Web"], 
     image: "/image/robustahub.png", 
     tags: ["React", "Express.js", "Agritech", "B2B", "Payment Gateway"], 
@@ -214,6 +228,10 @@ const tagColors = {
   "Prisma": "bg-teal-900 text-teal-100 border border-teal-700",
   "Docker": "bg-blue-100 text-blue-800 border border-blue-300",
   "Telegram Bot": "bg-sky-50 text-sky-500 border border-sky-200",
+  "Company Profile": "bg-blue-50 text-blue-700 border border-blue-200/60",
+  "Kesehatan": "bg-emerald-50 text-emerald-700 border border-emerald-200/60",
+  "Konstruksi": "bg-amber-50 text-amber-700 border border-amber-200/60",
+  "Web": "bg-sky-50 text-sky-700 border border-sky-200/60",
 };
 
 const categories = ["All", "Web", "AI & ML", "Mobile", "Internet of Things", "Bot", "Lainnya"];
